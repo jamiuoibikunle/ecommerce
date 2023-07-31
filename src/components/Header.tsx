@@ -45,14 +45,15 @@ const Header = () => {
         </HStack>
         <Spacer />
         <InputGroup
-          borderWidth={2}
+          borderWidth={1}
           borderColor="blue.500"
           maxW="2xl"
           borderRadius={10}
         >
           <Input borderWidth={0} />
           <Select
-            borderWidth="0 3"
+            borderWidth={0}
+            borderLeftWidth={1}
             borderColor="blue.500"
             borderRadius={0}
             w="sm"

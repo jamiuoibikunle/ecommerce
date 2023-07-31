@@ -6,9 +6,7 @@ import Header from "../components/Header";
 
 const page = () => {
   return (
-
     <Stack>
-
       <Header />
     </Stack>
   );
