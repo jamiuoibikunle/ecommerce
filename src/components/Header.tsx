@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  Box,
   Button,
   Divider,
   Flex,
@@ -7,25 +8,64 @@ import {
   Heading,
   Input,
   InputGroup,
+  InputLeftElement,
   Select,
   Spacer,
   Stack,
   StackDivider,
   Text,
   VStack,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import {
   BsBag,
+  BsCart,
   BsCartFill,
   BsChevronDown,
   BsFillChatLeftDotsFill,
   BsFillHeartFill,
+  BsPerson,
   BsPersonFill,
+  BsSearch,
 } from "react-icons/bs";
 import { HiOutlineMenu } from "react-icons/hi";
 
 const Header = () => {
-  return (
+  const [isMobile] = useMediaQuery("(max-width: 768px)")
+
+  return isMobile ? (
+    <Stack px={5}>
+      <HStack py={5} spacing={5}>
+        <Box cursor="pointer">
+          <HiOutlineMenu size={30} />
+        </Box>
+        <HStack>
+          <Flex
+            justifyContent="center"
+            alignItems="center"
+            p={3}
+            borderRadius={5}
+            bg="blue.500"
+            color="white"
+          >
+            <BsBag />
+          </Flex>
+          <Heading color="blue.500" fontSize="1.5rem" fontWeight="500">
+            Brand
+          </Heading>
+        </HStack>
+        <Spacer />
+        <BsCart size={25} />
+        <BsPerson size={25} />
+      </HStack>
+      <InputGroup size="lg">
+        <InputLeftElement>
+          <BsSearch />
+        </InputLeftElement>
+        <Input placeholder="Search" />
+      </InputGroup>
+    </Stack>
+  ) : (
     <Stack>
       <HStack py={4} px={10}>
         <HStack>
