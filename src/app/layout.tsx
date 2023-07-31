@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+import { ThemeProvider } from "../chakra/ThemeProvider";
+import { Children } from "@/types";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -8,14 +10,12 @@ export const metadata: Metadata = {
   description: "Project by Ibikunle Jamiu",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: Children) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>{children}</body>
+      <body className={montserrat.className}>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }

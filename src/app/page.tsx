@@ -1,9 +1,17 @@
-import React from 'react'
+"use client";
+
+import React from "react";
+import { Stack, Text } from "@chakra-ui/react";
+import Header from "../components/Header";
 
 const page = () => {
   return (
-    <div>page</div>
-  )
-}
 
-export default page
+    <Stack>
+
+      <Header />
+    </Stack>
+  );
+};
+
+export default page;
