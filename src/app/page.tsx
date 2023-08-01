@@ -5,6 +5,8 @@ import { Stack, Text } from "@chakra-ui/react";
 import Header from "../components/Header";
 import Loader from "@/components/Loader";
 import useMount from "@/hooks/useMount";
+import Newsletter from "@/components/Newsletter";
+import Footer from "@/components/Footer";
 
 const Page = () => {
 
@@ -14,6 +16,8 @@ const Page = () => {
     <Stack>
       {!mount && <Loader />}
       <Header />
+      <Newsletter />
+      <Footer />
     </Stack>
   );
 };
