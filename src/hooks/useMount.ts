@@ -5,7 +5,9 @@ const useMount = () => {
   const [mount, setMount] = useState(false)
 
   useEffect(() => {
-    if (window) setMount(true)
+    setTimeout(() => {
+      if (window) setMount(true)
+    }, 2500);
   }, [])
 
   return [mount]
