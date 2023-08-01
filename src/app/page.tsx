@@ -7,7 +7,7 @@ import Loader from "@/components/Loader";
 import useMount from "@/hooks/useMount";
 
 const page = () => {
-  const mount = useMount()
+  const [mount] = useMount()
 
   return (
     <Stack>

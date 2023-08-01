@@ -8,7 +8,7 @@ const useMount = () => {
     if (window) setMount(true)
   }, [])
 
-  return mount
+  return [mount]
 }
 
 export default useMount
