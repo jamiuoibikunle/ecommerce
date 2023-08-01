@@ -41,12 +41,17 @@ import { HiOutlineMenu } from "react-icons/hi";
 import { SlEarphonesAlt } from "react-icons/sl";
 import { BiBox } from "react-icons/bi";
 import { AiOutlineHeart, AiOutlineUnorderedList } from "react-icons/ai";
+import useMobile from "@/hooks/useMobile";
 
 const Header = () => {
-  const [isMobile] = useMediaQuery("(max-width: 768px)")
+  const [isMobile] = useMediaQuery("(min-width: 768px)")
   const { isOpen, onOpen, onClose } = useDisclosure()
 
-  return isMobile ? (
+  const isMobileRight = useMobile(400);
+
+  console.log(isMobileRight)
+
+  return !isMobile ? (
     <Stack px={5}>
       <HStack py={5} spacing={5}>
         <Box cursor="pointer" onClick={onOpen}>
@@ -139,7 +144,7 @@ const Header = () => {
             <BsBag />
           </Flex>
           <Heading color="blue.500" fontSize="1.5rem" fontWeight="500">
-            Brand
+            Pantha
           </Heading>
         </HStack>
         <Spacer />
@@ -168,7 +173,7 @@ const Header = () => {
             <BsBag />
           </Flex>
           <Heading color="blue.500" fontSize="1.5rem" fontWeight="500">
-            Brand
+            Pantha
           </Heading>
         </HStack>
         <Spacer />
