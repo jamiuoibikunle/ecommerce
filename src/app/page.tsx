@@ -1,13 +1,18 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Stack, Text } from "@chakra-ui/react";
 import Header from "../components/Header";
 import Loader from "@/components/Loader";
-import useMount from "@/hooks/useMount";
 
 const page = () => {
-  const [mount] = useMount()
+  const [mount, setMount] = useState(false)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setMount(true)
+    }, 3000)
+  }, [])
 
   return (
     <Stack>
