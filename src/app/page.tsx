@@ -5,7 +5,7 @@ import { Stack, Text } from "@chakra-ui/react";
 import Header from "../components/Header";
 import Loader from "@/components/Loader";
 
-const page = () => {
+const Page = () => {
   const [mount, setMount] = useState(false)
 
   useEffect(() => {
@@ -22,4 +22,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
