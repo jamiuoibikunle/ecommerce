@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Center,
   Circle,
@@ -7,45 +8,64 @@ import {
   Heading,
   Stack,
   Text,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import React from "react";
-import { BsPerson, BsPersonFill } from "react-icons/bs";
+import { BsPersonFill } from "react-icons/bs";
 
 const Categories = () => {
+  // const [isDesktop] = useMediaQuery("(min-width: 768px)")
+
   return (
-    <Flex flexDir="row" bg="white" borderRadius={10} gap={5} p={4}>
-      <Stack w="max-content">
-        <Button>
-          <Text w="100%" textAlign="left" fontWeight={500}>
-            Automobiles
-          </Text>
-        </Button>
-        <CustomButton link="" title="Clothes and wear" />
-        <CustomButton link="" title="Home interiors" />
-        <CustomButton link="" title="Computer and tech" />
-        <CustomButton link="" title="Tools, equipments" />
-        <CustomButton link="" title="Sports and outdoor" />
-        <CustomButton link="" title="Animal and pets" />
-        <CustomButton link="" title="Machinery tools" />
-        <CustomButton link="" title="More category" />
-      </Stack>
+    <Flex
+      flexDir="row"
+      bg="white"
+      borderRadius={10}
+      gap={5}
+      wrap={{ base: "wrap", lg: "nowrap" }}
+    >
+      <Box
+        overflowX={{ base: "auto", lg: "unset" }}
+        w={{ base: "100%", lg: "max-content" }}
+      >
+        <Stack
+          w={{ base: "fit-content", lg: "max-content" }}
+          p={{ base: 5, lg: 4 }}
+          flexDir={{ base: "row", lg: "column" }}
+        >
+          <CustomButton link="" title="Automobiles" />
+          <CustomButton link="" title="Clothes and wear" />
+          <CustomButton link="" title="Home interiors" />
+          <CustomButton link="" title="Computer and tech" />
+          <CustomButton link="" title="Tools, equipments" />
+          <CustomButton link="" title="Sports and outdoor" />
+          <CustomButton link="" title="Animal and pets" />
+          <CustomButton link="" title="Machinery tools" />
+          <CustomButton link="" title="More category" />
+        </Stack>
+      </Box>
       <Stack
         bgImage="/maskgroup01.png"
         bgSize="cover"
         bgPos="center"
-        p={10}
-        w="60%"
+        p={{ base: 6, lg: 10 }}
+        w={{ base: "100%", md: "60%" }}
         alignItems="flex-start"
+        pb={{ base: 20, lg: 10 }}
       >
-        <Heading fontSize="2rem" fontWeight={400}>
+        <Heading fontSize={{ base: "1.5rem", lg: "2rem" }} fontWeight={400}>
           Latest trending
         </Heading>
-        <Heading fontSize="2.5rem" fontWeight={600} pb={8}>
+        <Heading
+          fontSize={{ base: "2rem", md: "2.5rem" }}
+          fontWeight={600}
+          pb={{ base: 5, lg: 8 }}
+        >
           Electronic items
         </Heading>
-        <Button>Learn more</Button>
+        <Button color="blue.500">Learn more</Button>
       </Stack>
-      <Stack w="15rem">
+      <Stack w="15rem" display={{ base: "none", lg: "flex" }}>
         <Stack bg="blue.50" p={4} borderRadius={6}>
           <HStack pb={5}>
             <Circle bg="blue.200" p={1}>
@@ -85,8 +105,24 @@ const Categories = () => {
 };
 
 const CustomButton = ({ title, link }: any) => {
-  return (
-    <Button colorScheme="none" color="black" w="15rem">
+  const [isDesktop] = useMediaQuery("(min-width: 768px)");
+
+  return isDesktop ? (
+    <Button
+      colorScheme={title === "Automobiles" ? "gray" : "none"}
+      color="black"
+      w={{ base: "fit-content", lg: "15rem" }}
+    >
+      <Text w="100%" textAlign="left" fontWeight={500}>
+        {title}
+      </Text>
+    </Button>
+  ) : (
+    <Button
+      colorScheme="gray"
+      color="blue.500"
+      w={{ base: "fit-content", lg: "15rem" }}
+    >
       <Text w="100%" textAlign="left" fontWeight={500}>
         {title}
       </Text>

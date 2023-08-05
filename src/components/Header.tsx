@@ -43,10 +43,10 @@ import { BiBox } from "react-icons/bi";
 import { AiOutlineHeart, AiOutlineUnorderedList } from "react-icons/ai";
 
 const Header = () => {
-  const [isMobile] = useMediaQuery("(min-width: 768px)");
+  const [isDesktop] = useMediaQuery("(min-width: 768px)");
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  return !isMobile ? (
+  return !isDesktop ? (
     <Stack px={5}>
       <HStack py={5} spacing={5}>
         <Box cursor="pointer" onClick={onOpen}>
