@@ -43,8 +43,8 @@ import { BiBox } from "react-icons/bi";
 import { AiOutlineHeart, AiOutlineUnorderedList } from "react-icons/ai";
 
 const Header = () => {
-  const [isMobile] = useMediaQuery("(min-width: 768px)")
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const [isMobile] = useMediaQuery("(min-width: 768px)");
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return !isMobile ? (
     <Stack px={5}>
@@ -60,28 +60,60 @@ const Header = () => {
                 <Stack p={6} alignItems="flex-start" bg="gray.100" spacing={5}>
                   <BsPersonCircle size={40} />
                   <HStack>
-                    <Button variant="link" color="black" fontWeight={500}>Sign in</Button>
+                    <Button variant="link" color="black" fontWeight={500}>
+                      Sign in
+                    </Button>
                     <Text>|</Text>
-                    <Button variant="link" color="black" fontWeight={500}>Register</Button>
+                    <Button variant="link" color="black" fontWeight={500}>
+                      Register
+                    </Button>
                   </HStack>
                 </Stack>
                 <Stack p={6}>
-                  <Button leftIcon={<BsHouse />} colorScheme="none" color="black" size="lg" p={0} fontWeight={500}>
+                  <Button
+                    leftIcon={<BsHouse />}
+                    colorScheme="none"
+                    color="black"
+                    size="lg"
+                    p={0}
+                    fontWeight={500}
+                  >
                     <Text w="100%" textAlign="left">
                       Home
                     </Text>
                   </Button>
-                  <Button leftIcon={<AiOutlineUnorderedList />} colorScheme="none" color="black" size="lg" p={0} fontWeight={500}>
+                  <Button
+                    leftIcon={<AiOutlineUnorderedList />}
+                    colorScheme="none"
+                    color="black"
+                    size="lg"
+                    p={0}
+                    fontWeight={500}
+                  >
                     <Text w="100%" textAlign="left">
                       Categories
                     </Text>
                   </Button>
-                  <Button leftIcon={<AiOutlineHeart />} colorScheme="none" color="black" size="lg" p={0} fontWeight={500}>
+                  <Button
+                    leftIcon={<AiOutlineHeart />}
+                    colorScheme="none"
+                    color="black"
+                    size="lg"
+                    p={0}
+                    fontWeight={500}
+                  >
                     <Text w="100%" textAlign="left">
                       Favourites
                     </Text>
                   </Button>
-                  <Button leftIcon={<BiBox />} colorScheme="none" color="black" size="lg" p={0} fontWeight={500}>
+                  <Button
+                    leftIcon={<BiBox />}
+                    colorScheme="none"
+                    color="black"
+                    size="lg"
+                    p={0}
+                    fontWeight={500}
+                  >
                     <Text w="100%" textAlign="left">
                       My orders
                     </Text>
@@ -89,17 +121,38 @@ const Header = () => {
                 </Stack>
                 <Divider />
                 <Stack p={6}>
-                  <Button leftIcon={<BsGlobe />} colorScheme="none" color="black" size="lg" p={0} fontWeight={500}>
+                  <Button
+                    leftIcon={<BsGlobe />}
+                    colorScheme="none"
+                    color="black"
+                    size="lg"
+                    p={0}
+                    fontWeight={500}
+                  >
                     <Text w="100%" textAlign="left">
                       English | NGN
                     </Text>
                   </Button>
-                  <Button leftIcon={<SlEarphonesAlt />} colorScheme="none" color="black" size="lg" p={0} fontWeight={500}>
+                  <Button
+                    leftIcon={<SlEarphonesAlt />}
+                    colorScheme="none"
+                    color="black"
+                    size="lg"
+                    p={0}
+                    fontWeight={500}
+                  >
                     <Text w="100%" textAlign="left">
                       Contact us
                     </Text>
                   </Button>
-                  <Button leftIcon={<BsBorder />} colorScheme="none" color="black" size="lg" p={0} fontWeight={500}>
+                  <Button
+                    leftIcon={<BsBorder />}
+                    colorScheme="none"
+                    color="black"
+                    size="lg"
+                    p={0}
+                    fontWeight={500}
+                  >
                     <Text w="100%" textAlign="left">
                       About
                     </Text>
@@ -107,17 +160,35 @@ const Header = () => {
                 </Stack>
                 <Divider />
                 <Stack py={6} px={12}>
-                  <Button colorScheme="none" color="black" size="lg" p={0} fontWeight={500}>
+                  <Button
+                    colorScheme="none"
+                    color="black"
+                    size="lg"
+                    p={0}
+                    fontWeight={500}
+                  >
                     <Text w="100%" textAlign="left">
                       User agreement
                     </Text>
                   </Button>
-                  <Button colorScheme="none" color="black" size="lg" p={0} fontWeight={500}>
+                  <Button
+                    colorScheme="none"
+                    color="black"
+                    size="lg"
+                    p={0}
+                    fontWeight={500}
+                  >
                     <Text w="100%" textAlign="left">
                       Partnership
                     </Text>
                   </Button>
-                  <Button colorScheme="none" color="black" size="lg" p={0} fontWeight={500}>
+                  <Button
+                    colorScheme="none"
+                    color="black"
+                    size="lg"
+                    p={0}
+                    fontWeight={500}
+                  >
                     <Text w="100%" textAlign="left">
                       Privary policy
                     </Text>
