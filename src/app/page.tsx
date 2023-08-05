@@ -24,8 +24,8 @@ const Page = () => {
       <Container>
         <Categories />
       </Container>
-      <Newsletter />
-      <Footer />
+      {/* <Newsletter />
+      <Footer /> */}
     </Stack>
   );
 };
