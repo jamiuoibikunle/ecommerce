@@ -73,7 +73,7 @@ const Categories = () => {
             </Circle>
             <Stack spacing={0}>
               <Text>Hi, user</Text>
-              <Text>let's get started</Text>
+              <Text>let us get started</Text>
             </Stack>
           </HStack>
           <Button colorScheme="blue">Join now</Button>
