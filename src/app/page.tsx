@@ -10,9 +10,13 @@ import Footer from "@/components/Footer";
 import Head from "next/head";
 import Container from "@/components/Container";
 import Categories from "@/components/home/Categories";
+import { useSelector } from "react-redux";
 
 const Page = () => {
   const [mount] = useMount();
+
+  const counter = useSelector((state: any) => state.counter);
+  console.log(counter);
 
   return (
     <Stack>
