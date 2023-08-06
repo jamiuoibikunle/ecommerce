@@ -23,14 +23,17 @@ const Categories = () => {
       borderRadius={10}
       gap={5}
       wrap={{ base: "wrap", lg: "nowrap" }}
+      p={{ base: 0, lg: 4 }}
+      borderWidth={1}
+      borderColor="gray.300"
     >
       <Box
         overflowX={{ base: "auto", lg: "unset" }}
         w={{ base: "100%", lg: "max-content" }}
+        p={{ base: 4, lg: 0 }}
       >
         <Stack
           w={{ base: "fit-content", lg: "max-content" }}
-          p={{ base: 5, lg: 4 }}
           flexDir={{ base: "row", lg: "column" }}
         >
           <CustomButton link="" title="Automobiles" />
