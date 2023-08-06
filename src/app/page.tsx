@@ -1,37 +1,20 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { Stack, Text } from "@chakra-ui/react";
-import Header from "../components/Header";
 import Loader from "@/components/Loader";
+import Home from "@/components/home/Home";
 import useMount from "@/hooks/useMount";
-import Newsletter from "@/components/Newsletter";
-import Footer from "@/components/Footer";
-import Head from "next/head";
-import Container from "@/components/Container";
-import Categories from "@/components/home/Categories";
-import { useSelector } from "react-redux";
+import React from "react";
 
-const Page = () => {
+const page = () => {
   const [mount] = useMount();
 
-  const counter = useSelector((state: any) => state.counter);
-  console.log(counter);
+  switch (mount) {
+    case true:
+      return <Home />;
 
-  return (
-    <Stack>
-      <Head>
-        <title>Pantha ecommerce | Homepage</title>
-      </Head>
-      {!mount && <Loader />}
-      <Header />
-      <Container>
-        <Categories />
-      </Container>
-      {/* <Newsletter />
-      <Footer /> */}
-    </Stack>
-  );
+    default:
+      return <Loader />;
+  }
 };
 
-export default Page;
+export default page;
