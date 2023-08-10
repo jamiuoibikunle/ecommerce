@@ -26,6 +26,8 @@ const Categories = () => {
       p={{ base: 0, lg: 4 }}
       borderWidth={1}
       borderColor="gray.300"
+      w="100%"
+      maxW="7xl"
     >
       <Box
         overflowX={{ base: "auto", lg: "unset" }}

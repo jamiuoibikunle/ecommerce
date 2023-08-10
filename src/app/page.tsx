@@ -5,7 +5,7 @@ import Home from "@/components/home/Home";
 import useMount from "@/hooks/useMount";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   const [mount] = useMount();
 
   switch (mount) {
@@ -17,4 +17,4 @@ const page = () => {
   }
 };
 
-export default page;
+export default Page;

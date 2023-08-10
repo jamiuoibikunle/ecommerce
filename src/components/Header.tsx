@@ -225,8 +225,8 @@ const Header = () => {
       </InputGroup>
     </Stack>
   ) : (
-    <Stack>
-      <HStack py={4} px={10}>
+    <Stack w="100%" maxW="7xl" alignSelf="center">
+      <HStack p={4}>
         <HStack>
           <Flex
             justifyContent="center"
@@ -246,7 +246,7 @@ const Header = () => {
         <InputGroup
           borderWidth={1}
           borderColor="blue.500"
-          maxW="2xl"
+          w={{ lg: "lg", "2xl": "2xl" }}
           borderRadius={10}
         >
           <Input borderWidth={0} />
@@ -304,7 +304,7 @@ const Header = () => {
         </HStack>
       </HStack>
       <Divider />
-      <HStack px={10} spacing={5} py={3}>
+      <HStack px={4} spacing={5} py={3}>
         <HiOutlineMenu size={20} />
         <Button variant="link" fontWeight={500} color="black">
           All category
