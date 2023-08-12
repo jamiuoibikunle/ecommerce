@@ -43,7 +43,7 @@ import { BiBox } from "react-icons/bi";
 import { AiOutlineHeart, AiOutlineUnorderedList } from "react-icons/ai";
 
 const Header = () => {
-  const [isDesktop] = useMediaQuery("(min-width: 768px)");
+  const [isDesktop] = useMediaQuery("(min-width: 820px)");
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return !isDesktop ? (
@@ -246,7 +246,7 @@ const Header = () => {
         <InputGroup
           borderWidth={1}
           borderColor="blue.500"
-          w={{ lg: "lg", "2xl": "2xl" }}
+          w={{ sm: "sm", lg: "lg" }}
           borderRadius={10}
         >
           <Input borderWidth={0} />
@@ -304,7 +304,7 @@ const Header = () => {
         </HStack>
       </HStack>
       <Divider />
-      <HStack px={4} spacing={5} py={3}>
+      <HStack px={4} spacing={5} py={3} display={{ base: "none", lg: "flex" }}>
         <HiOutlineMenu size={20} />
         <Button variant="link" fontWeight={500} color="black">
           All category

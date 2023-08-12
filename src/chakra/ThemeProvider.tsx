@@ -5,9 +5,6 @@ import { CacheProvider } from "@chakra-ui/next-js";
 import { Children } from "@/types";
 
 const theme = extendTheme({
-  breakpoints: {
-    "2xl": "1200px",
-  },
   styles: {
     global: {
       "*": {
