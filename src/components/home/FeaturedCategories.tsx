@@ -7,11 +7,31 @@ import {
   Image,
   Stack,
   Text,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import React from "react";
 
 const FeaturedCategories = () => {
-  return (
+  const [isDesktop] = useMediaQuery("(min-width: 768px)");
+
+  return !isDesktop ? (
+    <Stack
+      bg="white"
+      w="100%"
+      maxW="7xl"
+      borderWidth={1}
+      borderColor="gray.300"
+      borderRadius={5}
+      mt={2}
+    >
+      <Stack w="100%" bg="gray.300" spacing={0.5} flexDir="row">
+        <CategoryCard />
+        <CategoryCard />
+        <CategoryCard />
+        <CategoryCard />
+      </Stack>
+    </Stack>
+  ) : (
     <Stack
       bg="white"
       w="100%"
@@ -21,6 +41,8 @@ const FeaturedCategories = () => {
       borderRadius={5}
       flexDir="row"
       spacing={0}
+      overflow="hidden"
+      my={{ md: 5, lg: 0 }}
     >
       <Stack
         w={{ md: "10rem", lg: "15rem" }}
@@ -71,7 +93,7 @@ const CategoryCard = () => {
           <Text>From</Text>
           <Text>USD 19</Text>
         </Stack>
-        <Image src="/homeandoutdoor-01.png" alignSelf="flex-end" />
+        <Image w="4rem" src="/homeandoutdoor-01.png" alignSelf="flex-end" />
       </Flex>
     </Stack>
   );

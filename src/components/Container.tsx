@@ -8,7 +8,7 @@ const Container = ({ children }: Children) => {
       w="100%"
       p={{ lg: 10 }}
       spacing={{ base: 0, lg: 10 }}
-      bg={{ lg: "gray.100" }}
+      bg="gray.100"
       alignItems="center"
     >
       {children}
