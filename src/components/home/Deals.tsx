@@ -71,7 +71,9 @@ const Deals = () => {
               borderBottomWidth={1}
             >
               <Image h="50%" w="7rem" src={item.image} />
-              <Text fontWeight={500} noOfLines={1} textAlign="center">{item.title}</Text>
+              <Text fontWeight={500} noOfLines={1} textAlign="center">
+                {item.title}
+              </Text>
               <Text
                 px={5}
                 py={1}
@@ -91,13 +93,20 @@ const Deals = () => {
     <Stack
       flexDir="row"
       borderWidth={1}
+      borderRadius={5}
+      overflow="hidden"
       borderColor="gray.300"
       bg="gray.300"
       spacing={0.5}
       w="100%"
       maxW="7xl"
     >
-      <Stack w="15rem" p={5} bg="white" boxSizing="content-box">
+      <Stack
+        w={{ md: "10rem", lg: "15rem" }}
+        p={5}
+        bg="white"
+        boxSizing="content-box"
+      >
         <Heading fontSize="1.5rem" fontWeight={500}>
           Deals and offers
         </Heading>
@@ -109,7 +118,11 @@ const Deals = () => {
           <TimeLabel time={56} label="Sec" />
         </HStack>
       </Stack>
-      <Stack flexDir="row" w="calc(100% - 15rem)" spacing={0.5}>
+      <Stack
+        flexDir="row"
+        w={{ md: "calc(100% - 10rem)", lg: "calc(100% - 15rem)" }}
+        spacing={0.5}
+      >
         {[
           {
             title: "Smart watches",
@@ -137,9 +150,21 @@ const Deals = () => {
             discount: "-25%",
           },
         ].map((item, index) => (
-          <Stack key={index} w="20%" bg="white" alignItems="center" py={2}>
-            <Image h="7rem" maxW="8rem" src={item.image} />
-            <Text fontWeight={500}>{item.title}</Text>
+          <Stack
+            key={index}
+            w="20%"
+            bg="white"
+            alignItems="center"
+            py={{ md: 4, lg: 2 }}
+          >
+            <Image
+              h={{ md: "6rem", lg: "7rem" }}
+              maxW={{ md: "6rem", lg: "8rem" }}
+              src={item.image}
+            />
+            <Text fontWeight={500} noOfLines={1} textAlign="center">
+              {item.title}
+            </Text>
             <Text
               px={5}
               py={1}

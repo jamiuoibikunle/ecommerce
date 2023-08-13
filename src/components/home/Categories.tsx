@@ -54,7 +54,7 @@ const Categories = () => {
         bgSize="cover"
         bgPos="center"
         p={{ base: 6, lg: 10 }}
-        w={{ base: "100%", md: "60%" }}
+        w={{ base: "100%", lg: "60%" }}
         alignItems="flex-start"
         pb={{ base: 20, lg: 10 }}
       >
