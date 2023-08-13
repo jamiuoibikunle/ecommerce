@@ -1,5 +1,6 @@
 "use client";
 
+import Holder from "@/components/Holder";
 import Loader from "@/components/Loader";
 import Home from "@/components/home/Home";
 import useMount from "@/hooks/useMount";
@@ -10,14 +11,10 @@ const Page = () => {
   const [mount] = useMount();
 
   return (
-    <Box
-      h={!mount ? "100vh" : "fit-content"}
-      w={!mount ? "100vw" : "100%"}
-      overflow="hidden"
-    >
+    <Holder>
       {!mount && <Loader />}
       <Home />
-    </Box>
+    </Holder>
   );
 };
 

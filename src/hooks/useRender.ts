@@ -15,9 +15,10 @@ const useRender = () => {
 
   useEffect(() => {
     handleRender()
+
+    window?.addEventListener("resize", handleRender)
   }, [])
 
-  window?.addEventListener("resize", handleRender)
 
   return [render]
 }
