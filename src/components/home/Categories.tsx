@@ -14,8 +14,6 @@ import React from "react";
 import { BsPersonFill } from "react-icons/bs";
 
 const Categories = () => {
-  // const [isDesktop] = useMediaQuery("(min-width: 768px)")
-
   return (
     <Flex
       flexDir="row"

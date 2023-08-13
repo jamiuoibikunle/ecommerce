@@ -1,5 +1,5 @@
+import useRender from "@/hooks/useRender";
 import {
-  Box,
   Button,
   Flex,
   HStack,
@@ -7,14 +7,26 @@ import {
   Image,
   Stack,
   Text,
-  useMediaQuery,
 } from "@chakra-ui/react";
 import React from "react";
 
 const FeaturedCategories = () => {
-  const [isDesktop] = useMediaQuery("(min-width: 768px)");
+  const [render] = useRender();
 
-  return !isDesktop ? (
+  switch (render) {
+    case "desktop":
+      return <Desktop />;
+
+    case "tablet":
+      return <Tablet />;
+
+    default:
+      return <Mobile />;
+  }
+};
+
+const Mobile = () => {
+  return (
     <Stack
       bg="white"
       w="100%"
@@ -31,7 +43,32 @@ const FeaturedCategories = () => {
         <CategoryCard />
       </Stack>
     </Stack>
-  ) : (
+  );
+};
+
+const Tablet = () => {
+  return (
+    <Stack
+      bg="white"
+      w="100%"
+      maxW="7xl"
+      borderWidth={1}
+      borderColor="gray.300"
+      borderRadius={5}
+      mt={2}
+    >
+      <Stack w="100%" bg="gray.300" spacing={0.5} flexDir="row">
+        <CategoryCard />
+        <CategoryCard />
+        <CategoryCard />
+        <CategoryCard />
+      </Stack>
+    </Stack>
+  );
+};
+
+const Desktop = () => {
+  return (
     <Stack
       bg="white"
       w="100%"

@@ -1,3 +1,4 @@
+import useRender from "@/hooks/useRender";
 import { TimeLabel } from "@/types";
 import {
   Box,
@@ -6,16 +7,27 @@ import {
   Image,
   Spacer,
   Stack,
-  StackDivider,
   Text,
-  useMediaQuery,
 } from "@chakra-ui/react";
 import React from "react";
 
 const Deals = () => {
-  const [isDesktop] = useMediaQuery("(min-width: 768px)");
+  const [render] = useRender();
 
-  return !isDesktop ? (
+  switch (render) {
+    case "desktop":
+      return <Desktop />;
+
+    case "tablet":
+      return <Tablet />;
+
+    default:
+      return <Mobile />;
+  }
+};
+
+const Mobile = () => {
+  return (
     <Stack flexDir="column" spacing={0.5} w="100%">
       <Stack flexDir="row" w="100%" p={5} bg="white">
         <Stack spacing={0}>
@@ -89,7 +101,89 @@ const Deals = () => {
         </Stack>
       </Box>
     </Stack>
-  ) : (
+  );
+};
+
+const Tablet = () => {
+  return (
+    <Stack flexDir="column" spacing={0.5} w="100%">
+      <Stack flexDir="row" w="100%" p={5} bg="white">
+        <Stack spacing={0}>
+          <Heading fontSize="1.5rem" fontWeight={500}>
+            Deals and offers
+          </Heading>
+          <Text color="blackAlpha.700">Hygeine equipments</Text>
+        </Stack>
+        <Spacer />
+        <HStack>
+          <TimeLabel time={4} label="Days" />
+          <TimeLabel time={13} label="Hour" />
+          <TimeLabel time={34} label="Mins" />
+        </HStack>
+      </Stack>
+      <Box overflowX="auto" bg="gray.100">
+        <Stack flexDir="row" w="fit-content" spacing={0.5}>
+          {[
+            {
+              title: "Smart watches",
+              image: "/deals-smartwatches.png",
+              discount: "-25%",
+            },
+            {
+              title: "Laptops",
+              image: "/deals-laptops.png",
+              discount: "-15%",
+            },
+            {
+              title: "GoPro cameras",
+              image: "/deals-goprocameras.png",
+              discount: "-40%",
+            },
+            {
+              title: "Headphones",
+              image: "/deals-headphones.png",
+              discount: "-25%",
+            },
+            {
+              title: "Camon cameras",
+              image: "/deals-camoncameras.png",
+              discount: "-25%",
+            },
+          ].map((item, index) => (
+            <Stack
+              key={index}
+              w="10rem"
+              alignItems="center"
+              h="14rem"
+              bg="white"
+              p={6}
+              borderTopWidth={1}
+              borderBottomWidth={1}
+            >
+              <Image h="50%" w="7rem" src={item.image} />
+              <Text fontWeight={500} noOfLines={1} textAlign="center">
+                {item.title}
+              </Text>
+              <Text
+                px={5}
+                py={1}
+                bg="red.100"
+                borderRadius={20}
+                color="red"
+                fontWeight={600}
+              >
+                {item.discount}
+              </Text>
+            </Stack>
+          ))}
+        </Stack>
+      </Box>
+    </Stack>
+  );
+};
+
+const Desktop = () => {
+  return (
     <Stack
       flexDir="row"
       borderWidth={1}
