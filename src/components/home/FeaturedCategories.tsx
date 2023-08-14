@@ -1,5 +1,6 @@
 import useRender from "@/hooks/useRender";
 import {
+  Box,
   Button,
   Flex,
   HStack,
@@ -35,13 +36,27 @@ const Mobile = () => {
       borderColor="gray.300"
       borderRadius={5}
       mt={2}
+      py={5}
     >
-      <Stack w="100%" bg="gray.300" spacing={0.5} flexDir="row">
-        <CategoryCard />
-        <CategoryCard />
-        <CategoryCard />
-        <CategoryCard />
-      </Stack>
+      <Heading px={5} fontSize="1.5rem" fontWeight={500}>
+        Home and outdoor
+      </Heading>
+      <Box overflowX="auto">
+        <Stack
+          bg="gray.200"
+          spacing={0.5}
+          flexDir="row"
+          w="fit-content"
+          borderTopWidth={0.5}
+          borderBottomWidth={0.5}
+          borderColor="gray.200"
+        >
+          <CategoryCardMobile />
+          <CategoryCardMobile />
+          <CategoryCardMobile />
+          <CategoryCardMobile />
+        </Stack>
+      </Box>
     </Stack>
   );
 };
@@ -58,10 +73,10 @@ const Tablet = () => {
       mt={2}
     >
       <Stack w="100%" bg="gray.300" spacing={0.5} flexDir="row">
-        <CategoryCard />
-        <CategoryCard />
-        <CategoryCard />
-        <CategoryCard />
+        <CategoryCardDesktop />
+        <CategoryCardDesktop />
+        <CategoryCardDesktop />
+        <CategoryCardDesktop />
       </Stack>
     </Stack>
   );
@@ -103,23 +118,23 @@ const Desktop = () => {
         spacing={0.5}
       >
         <HStack w="100%" h="50%" spacing={0.5}>
-          <CategoryCard />
-          <CategoryCard />
-          <CategoryCard />
-          <CategoryCard />
+          <CategoryCardDesktop />
+          <CategoryCardDesktop />
+          <CategoryCardDesktop />
+          <CategoryCardDesktop />
         </HStack>
         <HStack w="100%" h="50%" spacing={0.5}>
-          <CategoryCard />
-          <CategoryCard />
-          <CategoryCard />
-          <CategoryCard />
+          <CategoryCardDesktop />
+          <CategoryCardDesktop />
+          <CategoryCardDesktop />
+          <CategoryCardDesktop />
         </HStack>
       </Stack>
     </Stack>
   );
 };
 
-const CategoryCard = () => {
+const CategoryCardDesktop = () => {
   return (
     <Stack w="25%" h="100%" bg="white" boxSizing="border-box" p={4}>
       <Heading fontSize="1.3rem" fontWeight={400}>
@@ -132,6 +147,25 @@ const CategoryCard = () => {
         </Stack>
         <Image w="4rem" src="/homeandoutdoor-01.png" alignSelf="flex-end" />
       </Flex>
+    </Stack>
+  );
+};
+
+const CategoryCardMobile = () => {
+  return (
+    <Stack
+      w="10rem"
+      h="12rem"
+      bg="white"
+      boxSizing="border-box"
+      p={4}
+      alignItems="center"
+    >
+      <Image w="6rem" src="/homeandoutdoor-01.png" />
+      <Heading fontSize="1.5rem" fontWeight={400} noOfLines={1}>
+        Soft chairs
+      </Heading>
+      <Text color="blackAlpha.700">From USD 19</Text>
     </Stack>
   );
 };
