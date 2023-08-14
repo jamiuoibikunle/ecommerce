@@ -10,3 +10,10 @@ interface TimeLabel {
   time: number,
   label: string,
 }
+
+interface DealsCountdown {
+  days: number,
+  hours: number,
+  minutes: number,
+  seconds: number,
+}

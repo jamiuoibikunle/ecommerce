@@ -1,5 +1,9 @@
 import useRender from "@/hooks/useRender";
-import { TimeLabel } from "@/types";
+import { DealsCountdown, TimeLabel } from "@/types";
+import { handleDay } from "@/utils/handleDay";
+import { handleHour } from "@/utils/handleHour";
+import { handleMinute } from "@/utils/handleMinute";
+import { handleSecond } from "@/utils/handleSecond";
 import {
   Box,
   HStack,
@@ -9,24 +13,50 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Deals = () => {
   const [render] = useRender();
 
+  const [countdownDate, setCountdownate] = useState(
+    new Date().setDate(new Date().getDate() + 4)
+  );
+  const [dealsCountdown, setDealsCountdown] = useState<DealsCountdown>({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  useEffect(() => {
+    setInterval(() => {
+      const days = handleDay(countdownDate);
+      const hours = handleHour(countdownDate);
+      const minutes = handleMinute(countdownDate);
+      const seconds = handleSecond(countdownDate);
+
+      setDealsCountdown({
+        days,
+        hours,
+        minutes,
+        seconds,
+      });
+    }, 1000);
+  }, []);
+
   switch (render) {
     case "desktop":
-      return <Desktop />;
+      return <Desktop dealsCountdown={dealsCountdown} />;
 
     case "tablet":
-      return <Tablet />;
+      return <Tablet dealsCountdown={dealsCountdown} />;
 
     default:
-      return <Mobile />;
+      return <Mobile dealsCountdown={dealsCountdown} />;
   }
 };
 
-const Mobile = () => {
+const Mobile = ({ dealsCountdown }: { dealsCountdown: DealsCountdown }) => {
   return (
     <Stack flexDir="column" spacing={0.5} w="100%">
       <Stack flexDir="row" w="100%" p={5} bg="white">
@@ -38,9 +68,9 @@ const Mobile = () => {
         </Stack>
         <Spacer />
         <HStack>
-          <TimeLabel time={4} label="Days" />
-          <TimeLabel time={13} label="Hour" />
-          <TimeLabel time={34} label="Mins" />
+          <TimeLabel time={dealsCountdown.days} label="Days" />
+          <TimeLabel time={dealsCountdown.hours} label="Hour" />
+          <TimeLabel time={dealsCountdown.minutes} label="Mins" />
         </HStack>
       </Stack>
       <Box overflowX="auto" bg="gray.100">
@@ -104,7 +134,7 @@ const Mobile = () => {
   );
 };
 
-const Tablet = () => {
+const Tablet = ({ dealsCountdown }: { dealsCountdown: DealsCountdown }) => {
   return (
     <Stack flexDir="column" spacing={0.5} w="100%">
       <Stack flexDir="row" w="100%" p={5} bg="white">
@@ -116,9 +146,9 @@ const Tablet = () => {
         </Stack>
         <Spacer />
         <HStack>
-          <TimeLabel time={4} label="Days" />
-          <TimeLabel time={13} label="Hour" />
-          <TimeLabel time={34} label="Mins" />
+          <TimeLabel time={dealsCountdown.days} label="Days" />
+          <TimeLabel time={dealsCountdown.hours} label="Hour" />
+          <TimeLabel time={dealsCountdown.minutes} label="Mins" />
         </HStack>
       </Stack>
       <Box overflowX="auto" bg="gray.100">
@@ -182,7 +212,7 @@ const Tablet = () => {
   );
 };
 
-const Desktop = () => {
+const Desktop = ({ dealsCountdown }: { dealsCountdown: DealsCountdown }) => {
   return (
     <Stack
       flexDir="row"
@@ -206,10 +236,10 @@ const Desktop = () => {
         </Heading>
         <Text color="blackAlpha.700">Hygeine equipments</Text>
         <HStack>
-          <TimeLabel time={4} label="Days" />
-          <TimeLabel time={13} label="Hour" />
-          <TimeLabel time={34} label="Mins" />
-          <TimeLabel time={56} label="Sec" />
+          <TimeLabel time={dealsCountdown.days} label="Days" />
+          <TimeLabel time={dealsCountdown.hours} label="Hour" />
+          <TimeLabel time={dealsCountdown.minutes} label="Mins" />
+          <TimeLabel time={dealsCountdown.seconds} label="Sec" />
         </HStack>
       </Stack>
       <Stack
@@ -283,6 +313,7 @@ const TimeLabel = ({ time, label }: TimeLabel) => {
       color={{ base: "blackAlpha.500", lg: "white" }}
       justifyContent="center"
       alignItems="center"
+      w={{ base: "2.5rem", lg: "3rem" }}
       p={{ base: 1, lg: 2 }}
       spacing={0}
       borderRadius={5}
