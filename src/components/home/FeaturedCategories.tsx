@@ -10,6 +10,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
+import { BsArrowRight, BsChevronRight } from "react-icons/bs";
 
 const FeaturedCategories = () => {
   const [render] = useRender();
@@ -31,12 +32,12 @@ const Mobile = () => {
     <Stack
       bg="white"
       w="100%"
-      maxW="7xl"
       borderWidth={1}
       borderColor="gray.300"
       borderRadius={5}
       mt={2}
       py={5}
+      spacing={3}
     >
       <Heading px={5} fontSize="1.5rem" fontWeight={500}>
         Home and outdoor
@@ -57,6 +58,16 @@ const Mobile = () => {
           <CategoryCardMobile />
         </Stack>
       </Box>
+      <HStack
+        px={5}
+        fontSize="1.3rem"
+        color="blue.500"
+        cursor="pointer"
+        w="fit-content"
+      >
+        <Text>Source now</Text>
+        <BsArrowRight />
+      </HStack>
     </Stack>
   );
 };
