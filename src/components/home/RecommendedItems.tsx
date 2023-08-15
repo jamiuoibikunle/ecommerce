@@ -47,7 +47,7 @@ const Mobile = () => {
       <Grid templateColumns="repeat(2, 1fr)" gap={2}>
         {Array.from("1234567890").map((item, index) => (
           <GridItem key={index}>
-            <ItemCardMobile />
+            <ItemCard />
           </GridItem>
         ))}
       </Grid>
@@ -56,7 +56,20 @@ const Mobile = () => {
 };
 
 const Tablet = () => {
-  return <>Tablet</>;
+  return (
+    <Stack w="100%" maxW="7xl" spacing={5} p={{ base: 5, lg: 0 }}>
+      <Heading fontSize="1.5rem" fontWeight={500}>
+        Recommended items
+      </Heading>
+      <Grid templateColumns="repeat(3, 1fr)" gap={3}>
+        {Array.from("1234567890").map((item, index) => (
+          <GridItem key={index}>
+            <ItemCard />
+          </GridItem>
+        ))}
+      </Grid>
+    </Stack>
+  );
 };
 
 const Desktop = () => {
@@ -68,7 +81,7 @@ const Desktop = () => {
       <Grid templateColumns="repeat(5, 1fr)" gap={3}>
         {Array.from("1234567890").map((item, index) => (
           <GridItem key={index}>
-            <ItemCardMobile />
+            <ItemCard />
           </GridItem>
         ))}
       </Grid>
@@ -76,7 +89,7 @@ const Desktop = () => {
   );
 };
 
-const ItemCardMobile = () => {
+const ItemCard = () => {
   return (
     <Stack
       w="100%"
