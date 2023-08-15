@@ -12,7 +12,7 @@ import {
 import React from "react";
 import { BsArrowRight, BsChevronRight } from "react-icons/bs";
 
-const FeaturedCategories = () => {
+const FeaturedCategoriesOne = () => {
   const [render] = useRender();
 
   switch (render) {
@@ -34,7 +34,6 @@ const Mobile = () => {
       w="100%"
       borderWidth={1}
       borderColor="gray.300"
-      borderRadius={5}
       mt={2}
       py={5}
       spacing={3}
@@ -116,7 +115,7 @@ const Desktop = () => {
         bgSize="cover"
         spacing={5}
       >
-        <Heading w="10rem" fontSize="1.6rem" fontWeight={500}>
+        <Heading w="12rem" fontSize="1.6rem" fontWeight={500}>
           Home and outdoor
         </Heading>
         <Button w="fit-content" colorScheme="none" color="black" bg="white">
@@ -181,4 +180,4 @@ const CategoryCardMobile = () => {
   );
 };
 
-export default FeaturedCategories;
+export default FeaturedCategoriesOne;
