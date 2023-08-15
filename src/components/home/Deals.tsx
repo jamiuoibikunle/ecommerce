@@ -152,8 +152,8 @@ const Tablet = ({ dealsCountdown }: { dealsCountdown: DealsCountdown }) => {
           <TimeLabel time={dealsCountdown.minutes} label="Mins" />
         </HStack>
       </Stack>
-      <Box overflowX="auto" bg="gray.100">
-        <Stack flexDir="row" w="fit-content" spacing="1px">
+      <Box overflowX="auto" bg="gray.100" w="100%">
+        <Grid w="4xl" templateColumns="repeat(5, 1fr)" gap="1px">
           {[
             {
               title: "Smart watches",
@@ -183,15 +183,16 @@ const Tablet = ({ dealsCountdown }: { dealsCountdown: DealsCountdown }) => {
           ].map((item, index) => (
             <Stack
               key={index}
-              w="10rem"
+              w="100%"
               alignItems="center"
+              justifyContent="center"
               h="14rem"
               bg="white"
               p={6}
               borderTopWidth={1}
               borderBottomWidth={1}
             >
-              <Image h="50%" w="7rem" src={item.image} />
+              <Image h="50%" w="6.5rem" src={item.image} />
               <Text fontWeight={500} noOfLines={1} textAlign="center">
                 {item.title}
               </Text>
@@ -207,7 +208,7 @@ const Tablet = ({ dealsCountdown }: { dealsCountdown: DealsCountdown }) => {
               </Text>
             </Stack>
           ))}
-        </Stack>
+        </Grid>
       </Box>
     </Stack>
   );
