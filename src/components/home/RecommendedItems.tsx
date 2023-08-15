@@ -65,16 +65,13 @@ const Desktop = () => {
       <Heading fontSize="1.5rem" fontWeight={500}>
         Recommended items
       </Heading>
-      <Flex gap={5} justifyContent="space-between">
-        {Array.from("12345").map((item, index) => (
-          <ItemCardDesktop key={index} />
+      <Grid templateColumns="repeat(5, 1fr)" gap={3}>
+        {Array.from("1234567890").map((item, index) => (
+          <GridItem key={index}>
+            <ItemCardMobile />
+          </GridItem>
         ))}
-      </Flex>
-      <Flex gap={5} justifyContent="space-between">
-        {Array.from("12345").map((item, index) => (
-          <ItemCardDesktop key={index} />
-        ))}
-      </Flex>
+      </Grid>
     </Stack>
   );
 };
@@ -84,36 +81,23 @@ const ItemCardMobile = () => {
     <Stack
       w="100%"
       bg="white"
-      px={2}
+      px={{ base: 2, lg: 5 }}
       py={5}
       borderWidth={1}
       borderColor="gray.300"
       borderRadius={5}
       spacing={3}
+      cursor="pointer"
+      _hover={{
+        borderColor: "blue.300",
+      }}
+      transitionDuration="0.5s"
     >
-      <Image src="/recommendeditem01.png" />
+      <Image src="/recommendeditem01.png" draggable={false} />
       <Text fontWeight={600}>$10.30</Text>
-      <Text color="blackAlpha.600" fontSize="0.9rem">
+      <Text color="blackAlpha.600" fontSize={{ base: "0.9rem", lg: "1rem" }}>
         T-shirts with multiple colors, for men
       </Text>
-    </Stack>
-  );
-};
-
-const ItemCardDesktop = () => {
-  return (
-    <Stack
-      w="14.85rem"
-      bg="white"
-      p={5}
-      borderWidth={1}
-      borderColor="gray.300"
-      borderRadius={5}
-      spacing={3}
-    >
-      <Image src="/recommendeditem01.png" />
-      <Text fontWeight={600}>$10.30</Text>
-      <Text color="blackAlpha.600">T-shirts with multiple colors, for men</Text>
     </Stack>
   );
 };
