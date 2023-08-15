@@ -46,13 +46,34 @@ const Mobile = () => {
       <Heading fontSize="1.5rem" fontWeight={500}>
         Our extra services
       </Heading>
-      <Grid templateColumns="repeat(2, 1fr)" gap={2}>
-        {Array.from("1234567890").map((item, index) => (
-          <GridItem key={index}>
-            <ServiceCard />
-          </GridItem>
-        ))}
-      </Grid>
+      <Box overflow="auto" scrollSnapType="x mandatory">
+        <Flex w="5xl" gap={3}>
+          {[
+            {
+              title: "Source from Industry Hubs",
+              image: "/extraservices01.png",
+              icon: <BsSearch size={15} />,
+            },
+            {
+              title: "Customize Your Products",
+              image: "/extraservices02.png",
+              icon: <BsArchive size={18} />,
+            },
+            {
+              title: "Fast, reliable shipping by ocean or air",
+              image: "/extraservices03.png",
+              icon: <MdSend size={18} />,
+            },
+            {
+              title: "Product monitoring and inspection",
+              image: "/extraservices04.png",
+              icon: <BiShieldQuarter size={20} />,
+            },
+          ].map(({ icon, image, title }, index) => (
+            <ServiceCard key={index} icon={icon} image={image} title={title} />
+          ))}
+        </Flex>
+      </Box>
     </Stack>
   );
 };
