@@ -184,6 +184,26 @@ const Footer = () => {
           <Heading alignSelf="flex-start" fontSize="1.25rem" fontWeight="600">
             Get app
           </Heading>
+          {/* <HStack w="100%" spacing={5}>
+        <Button py={5} w="50%" colorScheme="none" color="white" bg="black">
+          <HStack>
+            <Image src="/apple-logo.png" />
+            <VStack spacing={0} alignItems="left" textAlign="left">
+              <Text fontSize="0.6rem">Download on the</Text>
+              <Heading fontSize="1rem">App Store</Heading>
+            </VStack>
+          </HStack>
+        </Button>
+        <Button py={5} w="50%" colorScheme="none" color="white" bg="black">
+          <HStack>
+            <Image src="/playstore.png" />
+            <VStack spacing={0} alignItems="left" textAlign="left">
+              <Text fontSize="0.6rem">GET IT ON</Text>
+              <Heading fontSize="1rem">Google Play</Heading>
+            </VStack>
+          </HStack>
+        </Button>
+      </HStack> */}
           <Stack direction={{ base: "row", lg: "column" }}>
             <Image src="/appstore.png" h="2.6rem" />
             <Image src="/google-playstore.png" h="3.5rem" />

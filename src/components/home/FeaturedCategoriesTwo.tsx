@@ -141,7 +141,7 @@ const Desktop = () => {
         w={{ md: "10rem", lg: "15rem" }}
         p={5}
         boxSizing="content-box"
-        bgImage="/homeandoutdoor.png"
+        bgImage="/consumerelectronics.png"
         bgPos="center"
         bgSize="cover"
         spacing={5}
