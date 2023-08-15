@@ -44,7 +44,7 @@ const Mobile = () => {
       <Box overflowX="auto">
         <Stack
           bg="gray.200"
-          spacing={0.5}
+          spacing="1px"
           flexDir="row"
           w="fit-content"
           borderTopWidth={0.5}
@@ -82,12 +82,33 @@ const Tablet = () => {
       borderRadius={5}
       mt={2}
     >
-      <Stack w="100%" bg="gray.300" spacing={0.5} flexDir="row">
+      <Heading p={5} fontSize="1.5rem" fontWeight={500}>
+        Home and outdoor
+      </Heading>
+      <Stack
+        w="100%"
+        bg="gray.100"
+        spacing="1px"
+        flexDir="row"
+        borderTopWidth={1}
+        borderBottomWidth={1}
+        borderColor="gray.100"
+      >
         <CategoryCardDesktop />
         <CategoryCardDesktop />
         <CategoryCardDesktop />
         <CategoryCardDesktop />
       </Stack>
+      <HStack
+        p={5}
+        fontSize="1.3rem"
+        color="blue.500"
+        cursor="pointer"
+        w="fit-content"
+      >
+        <Text>Source now</Text>
+        <BsArrowRight />
+      </HStack>
     </Stack>
   );
 };
@@ -125,15 +146,15 @@ const Desktop = () => {
       <Stack
         w={{ md: "calc(100% - 10rem)", lg: "calc(100% - 15rem)" }}
         bg="gray.300"
-        spacing={0.5}
+        spacing="1px"
       >
-        <HStack w="100%" h="50%" spacing={0.5}>
+        <HStack w="100%" h="50%" spacing="1px">
           <CategoryCardDesktop />
           <CategoryCardDesktop />
           <CategoryCardDesktop />
           <CategoryCardDesktop />
         </HStack>
-        <HStack w="100%" h="50%" spacing={0.5}>
+        <HStack w="100%" h="50%" spacing="1px">
           <CategoryCardDesktop />
           <CategoryCardDesktop />
           <CategoryCardDesktop />
