@@ -42,21 +42,24 @@ const Mobile = () => {
       <Heading px={5} fontSize="1.5rem" fontWeight={500}>
         Home and outdoor
       </Heading>
-      <Box overflowX="auto">
-        <Stack
-          bg="gray.200"
-          spacing="1px"
-          flexDir="row"
-          w="fit-content"
-          borderTopWidth={0.5}
-          borderBottomWidth={0.5}
-          borderColor="gray.200"
+      <Box
+        overflowX="auto"
+        bg="gray.100"
+        scrollSnapType="x mandatory"
+        borderTopWidth="1px"
+        borderBottomWidth="1px"
+        borderColor="gray.100"
+      >
+        <Grid
+          w="4xl"
+          templateColumns="repeat(5, 1fr)"
+          gap="1px"
+          scrollSnapAlign="start"
         >
-          <CategoryCardMobile />
-          <CategoryCardMobile />
-          <CategoryCardMobile />
-          <CategoryCardMobile />
-        </Stack>
+          {Array.from("12345").map((item, index) => (
+            <CategoryCardMobile key={index} />
+          ))}
+        </Grid>
       </Box>
       <HStack
         px={5}
@@ -192,12 +195,13 @@ const CategoryCardDesktop = () => {
 const CategoryCardMobile = () => {
   return (
     <Stack
-      w="10rem"
+      w="100%"
       h="12rem"
       bg="white"
       boxSizing="border-box"
       p={4}
       alignItems="center"
+      scrollSnapAlign="start"
     >
       <Image w="6rem" src="/homeandoutdoor-01.png" />
       <Heading fontSize="1.5rem" fontWeight={400} noOfLines={1}>

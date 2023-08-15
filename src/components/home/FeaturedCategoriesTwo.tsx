@@ -42,21 +42,24 @@ const Mobile = () => {
       <Heading px={5} fontSize="1.5rem" fontWeight={500}>
         Consumer electronics and gadgets
       </Heading>
-      <Box overflowX="auto">
-        <Stack
-          bg="gray.200"
-          spacing="1px"
-          flexDir="row"
-          w="fit-content"
-          borderTopWidth={0.5}
-          borderBottomWidth={0.5}
-          borderColor="gray.200"
+      <Box
+        overflowX="auto"
+        bg="gray.100"
+        scrollSnapType="x mandatory"
+        borderTopWidth="1px"
+        borderBottomWidth="1px"
+        borderColor="gray.100"
+      >
+        <Grid
+          w="4xl"
+          templateColumns="repeat(5, 1fr)"
+          gap="1px"
+          scrollSnapAlign="start"
         >
-          <CategoryCardMobile />
-          <CategoryCardMobile />
-          <CategoryCardMobile />
-          <CategoryCardMobile />
-        </Stack>
+          {Array.from("12345").map((item, index) => (
+            <CategoryCardMobile key={index} />
+          ))}
+        </Grid>
       </Box>
       <HStack
         px={5}
@@ -84,22 +87,28 @@ const Tablet = () => {
       mt={2}
     >
       <Heading p={5} fontSize="1.5rem" fontWeight={500}>
-        Consumer electronics and gadgets
+        Computer electronics and gadgets
       </Heading>
-      <Stack
+      <Box
+        overflow="auto"
         w="100%"
-        bg="gray.300"
-        spacing="1px"
-        flexDir="row"
+        bg="gray.100"
         borderTopWidth={1}
         borderBottomWidth={1}
         borderColor="gray.100"
+        scrollSnapType="x mandatory"
       >
-        <CategoryCardDesktop />
-        <CategoryCardDesktop />
-        <CategoryCardDesktop />
-        <CategoryCardDesktop />
-      </Stack>
+        <Grid
+          templateColumns="repeat(8, 1fr)"
+          gap="1px"
+          w="8xl"
+          scrollSnapAlign="start"
+        >
+          {Array.from("12345678").map((item, index) => (
+            <CategoryCardDesktop key={index} />
+          ))}
+        </Grid>
+      </Box>
       <HStack
         p={5}
         fontSize="1.3rem"
@@ -161,7 +170,14 @@ const Desktop = () => {
 
 const CategoryCardDesktop = () => {
   return (
-    <Stack w="100%" h="100%" bg="white" boxSizing="border-box" p={4}>
+    <Stack
+      w="100%"
+      h="100%"
+      bg="white"
+      boxSizing="border-box"
+      p={4}
+      scrollSnapAlign="start"
+    >
       <Heading fontSize="1.3rem" fontWeight={400}>
         Smart watches
       </Heading>
@@ -179,12 +195,13 @@ const CategoryCardDesktop = () => {
 const CategoryCardMobile = () => {
   return (
     <Stack
-      w="10rem"
+      w="100%"
       h="12rem"
       bg="white"
       boxSizing="border-box"
       p={4}
       alignItems="center"
+      scrollSnapAlign="start"
     >
       <Image w="6rem" src="/deals-smartwatches.png" />
       <Heading fontSize="1.5rem" fontWeight={400} noOfLines={1}>
