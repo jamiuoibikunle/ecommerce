@@ -86,20 +86,26 @@ const Tablet = () => {
       <Heading p={5} fontSize="1.5rem" fontWeight={500}>
         Home and outdoor
       </Heading>
-      <Stack
+      <Box
+        overflow="auto"
         w="100%"
         bg="gray.100"
-        spacing="1px"
-        flexDir="row"
         borderTopWidth={1}
         borderBottomWidth={1}
         borderColor="gray.100"
+        scrollSnapType="x mandatory"
       >
-        <CategoryCardDesktop />
-        <CategoryCardDesktop />
-        <CategoryCardDesktop />
-        <CategoryCardDesktop />
-      </Stack>
+        <Grid
+          templateColumns="repeat(8, 1fr)"
+          gap="1px"
+          w="8xl"
+          scrollSnapAlign="start"
+        >
+          {Array.from("12345678").map((item, index) => (
+            <CategoryCardDesktop key={index} />
+          ))}
+        </Grid>
+      </Box>
       <HStack
         p={5}
         fontSize="1.3rem"
@@ -161,7 +167,14 @@ const Desktop = () => {
 
 const CategoryCardDesktop = () => {
   return (
-    <Stack w="100%" h="100%" bg="white" boxSizing="border-box" p={4}>
+    <Stack
+      w="100%"
+      h="100%"
+      bg="white"
+      boxSizing="border-box"
+      p={4}
+      scrollSnapAlign="start"
+    >
       <Heading fontSize="1.3rem" fontWeight={400}>
         Soft chairs
       </Heading>

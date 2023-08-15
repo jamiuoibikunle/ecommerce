@@ -118,6 +118,7 @@ const Mobile = ({ dealsCountdown }: { dealsCountdown: DealsCountdown }) => {
               p={6}
               borderTopWidth={1}
               borderBottomWidth={1}
+              scrollSnapAlign="start"
             >
               <Image h="50%" w="6.5rem" src={item.image} />
               <Text fontWeight={500} noOfLines={1} textAlign="center">
@@ -202,6 +203,7 @@ const Tablet = ({ dealsCountdown }: { dealsCountdown: DealsCountdown }) => {
               p={6}
               borderTopWidth={1}
               borderBottomWidth={1}
+              scrollSnapAlign="start"
             >
               <Image h="50%" w="6.5rem" src={item.image} />
               <Text fontWeight={500} noOfLines={1} textAlign="center">
