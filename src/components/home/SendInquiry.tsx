@@ -31,7 +31,26 @@ const SendInquiry = () => {
 };
 
 const Mobile = () => {
-  return <>Mobile</>;
+  return (
+    <Stack
+      bgImage="/sendinquiry.png"
+      bgPos="center"
+      bgSize="cover"
+      w="100%"
+      color="white"
+      mt={2}
+      px={5}
+      py={10}
+      spacing={8}
+    >
+      <Heading fontSize="2rem" fontWeight={500}>
+        An easy way to send requests to all suppliers
+      </Heading>
+      <Button colorScheme="blue" w="fit-content">
+        Send inquiry
+      </Button>
+    </Stack>
+  );
 };
 
 const Tablet = () => {
@@ -53,7 +72,9 @@ const Desktop = () => {
       p={10}
     >
       <Stack w="md" color="white">
-        <Heading fontSize="2rem" fontWeight={500}>An easy way to send requests to all suppliers</Heading>
+        <Heading fontSize="2rem" fontWeight={500}>
+          An easy way to send requests to all suppliers
+        </Heading>
         <Text>
           Lorep ipsum dolor sit amet, consecteturadipsicing elit, sed do elusmod
           tempor incidunt.
