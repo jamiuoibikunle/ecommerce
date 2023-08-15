@@ -6,6 +6,7 @@ import Categories from "@/components/home/Categories";
 import Deals from "@/components/home/Deals";
 import FeaturedCategoriesOne from "@/components/home/FeaturedCategoriesOne";
 import FeaturedCategoriesTwo from "@/components/home/FeaturedCategoriesTwo";
+import SendInquiry from "@/components/home/SendInquiry";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
         <Deals />
         <FeaturedCategoriesOne />
         <FeaturedCategoriesTwo />
+        <SendInquiry />
       </Container>
       {/* <Newsletter />
       <Footer /> */}
