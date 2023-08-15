@@ -3,6 +3,7 @@ import {
   Box,
   Button,
   Flex,
+  Grid,
   HStack,
   Heading,
   Image,
@@ -148,18 +149,11 @@ const Desktop = () => {
         bg="gray.300"
         spacing="1px"
       >
-        <HStack w="100%" h="50%" spacing="1px">
-          <CategoryCardDesktop />
-          <CategoryCardDesktop />
-          <CategoryCardDesktop />
-          <CategoryCardDesktop />
-        </HStack>
-        <HStack w="100%" h="50%" spacing="1px">
-          <CategoryCardDesktop />
-          <CategoryCardDesktop />
-          <CategoryCardDesktop />
-          <CategoryCardDesktop />
-        </HStack>
+        <Grid templateColumns="repeat(4, 1fr)" gap="1px">
+          {Array.from("12345678").map((item, index) => (
+            <CategoryCardDesktop key={index} />
+          ))}
+        </Grid>
       </Stack>
     </Stack>
   );
@@ -167,7 +161,7 @@ const Desktop = () => {
 
 const CategoryCardDesktop = () => {
   return (
-    <Stack w="25%" h="100%" bg="white" boxSizing="border-box" p={4}>
+    <Stack w="100%" h="100%" bg="white" boxSizing="border-box" p={4}>
       <Heading fontSize="1.3rem" fontWeight={400}>
         Soft chairs
       </Heading>
