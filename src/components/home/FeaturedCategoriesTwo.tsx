@@ -44,7 +44,7 @@ const Mobile = () => {
       <Box overflowX="auto">
         <Stack
           bg="gray.200"
-          spacing={0.5}
+          spacing="1px"
           flexDir="row"
           w="fit-content"
           borderTopWidth={0.5}
@@ -88,7 +88,7 @@ const Tablet = () => {
       <Stack
         w="100%"
         bg="gray.300"
-        spacing={0.5}
+        spacing="1px"
         flexDir="row"
         borderTopWidth={1}
         borderBottomWidth={1}
@@ -146,15 +146,15 @@ const Desktop = () => {
       <Stack
         w={{ md: "calc(100% - 10rem)", lg: "calc(100% - 15rem)" }}
         bg="gray.300"
-        spacing={0.5}
+        spacing="1px"
       >
-        <HStack w="100%" h="50%" spacing={0.5}>
+        <HStack w="100%" h="50%" spacing="1px">
           <CategoryCardDesktop />
           <CategoryCardDesktop />
           <CategoryCardDesktop />
           <CategoryCardDesktop />
         </HStack>
-        <HStack w="100%" h="50%" spacing={0.5}>
+        <HStack w="100%" h="50%" spacing="1px">
           <CategoryCardDesktop />
           <CategoryCardDesktop />
           <CategoryCardDesktop />

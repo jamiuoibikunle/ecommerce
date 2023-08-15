@@ -58,7 +58,7 @@ const Deals = () => {
 
 const Mobile = ({ dealsCountdown }: { dealsCountdown: DealsCountdown }) => {
   return (
-    <Stack flexDir="column" spacing={0.5} w="100%">
+    <Stack flexDir="column" spacing="1px" w="100%">
       <Stack flexDir="row" w="100%" p={5} bg="white">
         <Stack spacing={0}>
           <Heading fontSize="1.5rem" fontWeight={500}>
@@ -74,7 +74,7 @@ const Mobile = ({ dealsCountdown }: { dealsCountdown: DealsCountdown }) => {
         </HStack>
       </Stack>
       <Box overflowX="auto" bg="gray.100">
-        <Stack flexDir="row" w="fit-content" spacing={0.5}>
+        <Stack flexDir="row" w="fit-content" spacing="1px">
           {[
             {
               title: "Smart watches",
@@ -136,7 +136,7 @@ const Mobile = ({ dealsCountdown }: { dealsCountdown: DealsCountdown }) => {
 
 const Tablet = ({ dealsCountdown }: { dealsCountdown: DealsCountdown }) => {
   return (
-    <Stack flexDir="column" spacing={0.5} w="100%">
+    <Stack flexDir="column" spacing="1px" w="100%">
       <Stack flexDir="row" w="100%" p={5} bg="white">
         <Stack spacing={0}>
           <Heading fontSize="1.5rem" fontWeight={500}>
@@ -152,7 +152,7 @@ const Tablet = ({ dealsCountdown }: { dealsCountdown: DealsCountdown }) => {
         </HStack>
       </Stack>
       <Box overflowX="auto" bg="gray.100">
-        <Stack flexDir="row" w="fit-content" spacing={0.5}>
+        <Stack flexDir="row" w="fit-content" spacing="1px">
           {[
             {
               title: "Smart watches",
@@ -221,7 +221,7 @@ const Desktop = ({ dealsCountdown }: { dealsCountdown: DealsCountdown }) => {
       overflow="hidden"
       borderColor="gray.300"
       bg="gray.300"
-      spacing={0.5}
+      spacing="1px"
       w="100%"
       maxW="7xl"
     >
@@ -245,7 +245,7 @@ const Desktop = ({ dealsCountdown }: { dealsCountdown: DealsCountdown }) => {
       <Stack
         flexDir="row"
         w={{ md: "calc(100% - 10rem)", lg: "calc(100% - 15rem)" }}
-        spacing={0.5}
+        spacing="1px"
       >
         {[
           {

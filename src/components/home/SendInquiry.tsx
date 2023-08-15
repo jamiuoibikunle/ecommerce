@@ -1,11 +1,9 @@
 import useRender from "@/hooks/useRender";
 import {
-  Box,
   Button,
   Flex,
   HStack,
   Heading,
-  Image,
   Input,
   Modal,
   ModalBody,
@@ -19,7 +17,6 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
-import { BsArrowRight, BsChevronRight } from "react-icons/bs";
 
 const SendInquiry = () => {
   const [render] = useRender();
