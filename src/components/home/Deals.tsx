@@ -6,6 +6,7 @@ import { handleMinute } from "@/utils/handleMinute";
 import { handleSecond } from "@/utils/handleSecond";
 import {
   Box,
+  Grid,
   HStack,
   Heading,
   Image,
@@ -242,10 +243,11 @@ const Desktop = ({ dealsCountdown }: { dealsCountdown: DealsCountdown }) => {
           <TimeLabel time={dealsCountdown.seconds} label="Sec" />
         </HStack>
       </Stack>
-      <Stack
-        flexDir="row"
+      <Grid
+        templateColumns="repeat(5, 1fr)"
         w={{ md: "calc(100% - 10rem)", lg: "calc(100% - 15rem)" }}
-        spacing="1px"
+        h="100%"
+        gap="1px"
       >
         {[
           {
@@ -276,10 +278,11 @@ const Desktop = ({ dealsCountdown }: { dealsCountdown: DealsCountdown }) => {
         ].map((item, index) => (
           <Stack
             key={index}
-            w="20%"
+            w="100%"
             bg="white"
             alignItems="center"
             py={{ md: 4, lg: 2 }}
+            cursor="pointer"
           >
             <Image
               h={{ md: "6rem", lg: "7rem" }}
@@ -301,7 +304,7 @@ const Desktop = ({ dealsCountdown }: { dealsCountdown: DealsCountdown }) => {
             </Text>
           </Stack>
         ))}
-      </Stack>
+      </Grid>
     </Stack>
   );
 };
