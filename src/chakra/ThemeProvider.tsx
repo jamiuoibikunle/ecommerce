@@ -12,6 +12,12 @@ const theme = extendTheme({
       },
     },
   },
+  colors: {
+    brand: {
+      lighter: "#f7fafc",
+      light: "#eff2fe",
+    },
+  },
 });
 
 export const ThemeProvider = ({ children }: Children) => {

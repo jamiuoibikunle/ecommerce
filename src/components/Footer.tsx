@@ -210,7 +210,7 @@ const Footer = () => {
           </Stack>
         </Stack>
       </Flex>
-      <HStack px={10} py={4} bg="blackAlpha.200">
+      <HStack px={10} py={4} bg="brand.light">
         <Text>&copy; 2023 Ecommerce</Text>
         <Spacer />
         <Button

@@ -15,7 +15,7 @@ const Newsletter = () => {
   return (
     <Stack
       p={{ base: 6, lg: 14 }}
-      bg="blackAlpha.100"
+      bg="brand.light"
       justifyContent="center"
       alignItems="center"
       spacing={5}

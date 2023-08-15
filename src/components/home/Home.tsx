@@ -9,10 +9,12 @@ import FeaturedCategoriesTwo from "@/components/home/FeaturedCategoriesTwo";
 import SendInquiry from "@/components/home/SendInquiry";
 import RecommendedItems from "@/components/home/RecommendedItems";
 import ExtraServices from "@/components/home/ExtraServices";
+import Newsletter from "../Newsletter";
+import Footer from "../Footer";
 
 const Home = () => {
   return (
-    <Stack>
+    <Stack spacing={0}>
       <Header />
       <Container>
         <Categories />
@@ -23,8 +25,8 @@ const Home = () => {
         <RecommendedItems />
         <ExtraServices />
       </Container>
-      {/* <Newsletter />
-      <Footer /> */}
+      <Newsletter />
+      <Footer />
     </Stack>
   );
 };
