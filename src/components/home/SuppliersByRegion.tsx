@@ -22,7 +22,7 @@ const Mobile = () => {
   return (
     <Stack w="100%" spacing={5} px={4} py={5}>
       <Heading fontSize="1.5rem" fontWeight={500}>
-        Our extra services
+        Suppliers by region
       </Heading>
       <Grid templateColumns="repeat(2, 1fr)" gap={5}>
         {[
@@ -83,7 +83,7 @@ const Tablet = () => {
   return (
     <Stack w="100%" maxW="7xl" spacing={5} p={{ base: 5, lg: 0 }}>
       <Heading fontSize="1.5rem" fontWeight={500}>
-        Our extra services
+        Suppliers by region
       </Heading>
       <Grid templateColumns="repeat(3, 1fr)" gap={3}>
         {[
