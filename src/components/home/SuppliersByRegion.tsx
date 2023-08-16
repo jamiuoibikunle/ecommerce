@@ -85,34 +85,57 @@ const Tablet = () => {
       <Heading fontSize="1.5rem" fontWeight={500}>
         Our extra services
       </Heading>
-      <Box overflow="auto" scrollSnapType="x mandatory">
-        <Flex w="5xl" gap={3}>
-          {[
-            {
-              title: "Source from Industry Hubs",
-              image: "/extraservices01.png",
-              icon: <BsSearch size={15} />,
-            },
-            {
-              title: "Customize Your Products",
-              image: "/extraservices02.png",
-              icon: <BsArchive size={18} />,
-            },
-            {
-              title: "Fast, reliable shipping by ocean or air",
-              image: "/extraservices03.png",
-              icon: <MdSend size={18} />,
-            },
-            {
-              title: "Product monitoring and inspection",
-              image: "/extraservices04.png",
-              icon: <BiShieldQuarter size={20} />,
-            },
-          ].map(({ icon, image, title }, index) => (
-            <SupplierCard key={index} icon={icon} title={title} />
-          ))}
-        </Flex>
-      </Box>
+      <Grid templateColumns="repeat(3, 1fr)" gap={3}>
+        {[
+          {
+            title: "Arabic Emirates",
+            link: "pantha-ecommerce.com.ae",
+            countryCode: "AE",
+          },
+          {
+            title: "Australia",
+            link: "pantha-ecommerce.com.au",
+            countryCode: "AU",
+          },
+          {
+            title: "United States",
+            link: "pantha-ecommerce.com.us",
+            countryCode: "US",
+          },
+          {
+            title: "Italy",
+            link: "pantha-ecommerce.com.it",
+            countryCode: "IT",
+          },
+          {
+            title: "Denmark",
+            link: "pantha-ecommerce.com.dk",
+            countryCode: "DK",
+          },
+          {
+            title: "France",
+            link: "pantha-ecommerce.com.fr",
+            countryCode: "FR",
+          },
+          {
+            title: "China",
+            link: "pantha-ecommerce.com.fr",
+            countryCode: "CN",
+          },
+          {
+            title: "Great Britain",
+            link: "pantha-ecommerce.com.uk",
+            countryCode: "GB",
+          },
+        ].map(({ countryCode, link, title }, index) => (
+          <SupplierCard
+            key={index}
+            countryCode={countryCode}
+            link={link}
+            title={title}
+          />
+        ))}
+      </Grid>
     </Stack>
   );
 };
@@ -187,8 +210,10 @@ const SupplierCard = ({ countryCode, link, title }: any) => {
         countryCode={countryCode}
       />
       <Stack spacing={0}>
-        <Text>{title}</Text>
-        <Text color="blackAlpha.600">{link}</Text>
+        <Text noOfLines={1}>{title}</Text>
+        <Text noOfLines={1} color="blackAlpha.600">
+          {link}
+        </Text>
       </Stack>
     </Stack>
   );
