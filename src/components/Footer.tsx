@@ -210,16 +210,9 @@ const Desktop = () => {
 
 const Tablet = () => {
   return (
-    <Stack>
-      <Flex
-        w="100%"
-        maxW="7xl"
-        mx="auto"
-        py={8}
-        justifyContent="space-between"
-        gap={20}
-      >
-        <Stack w="20rem" spacing={6}>
+    <Stack py={8} spacing={12}>
+      <Flex px={5} justifyContent="space-between" w="100%">
+        <Stack w="50%" spacing={6}>
           <HStack>
             <Flex
               justifyContent="center"
@@ -281,89 +274,89 @@ const Tablet = () => {
             </Flex>
           </HStack>
         </Stack>
-        <Grid w="calc(100% - 20rem)" templateColumns="repeat(5, 1fr)" gap={5}>
-          <Stack alignItems="flex-start" spacing={4}>
-            <Heading fontSize="1.5rem" fontWeight="600">
-              About
-            </Heading>
-            <Button variant="link" color="blackAlpha.700" fontWeight="500">
-              About Us
-            </Button>
-            <Button variant="link" color="blackAlpha.700" fontWeight="500">
-              Find store
-            </Button>
-            <Button variant="link" color="blackAlpha.700" fontWeight="500">
-              Categories
-            </Button>
-            <Button variant="link" color="blackAlpha.700" fontWeight="500">
-              Blogs
-            </Button>
-          </Stack>
-          <Stack alignItems="flex-start" spacing={4}>
-            <Heading fontSize="1.5rem" fontWeight="600">
-              Partnership
-            </Heading>
-            <Button variant="link" color="blackAlpha.700" fontWeight="500">
-              About Us
-            </Button>
-            <Button variant="link" color="blackAlpha.700" fontWeight="500">
-              Find store
-            </Button>
-            <Button variant="link" color="blackAlpha.700" fontWeight="500">
-              Categories
-            </Button>
-            <Button variant="link" color="blackAlpha.700" fontWeight="500">
-              Blogs
-            </Button>
-          </Stack>
-          <Stack alignItems="flex-start" spacing={4}>
-            <Heading fontSize="1.5rem" fontWeight="600">
-              Information
-            </Heading>
-            <Button variant="link" color="blackAlpha.700" fontWeight="500">
-              About Us
-            </Button>
-            <Button variant="link" color="blackAlpha.700" fontWeight="500">
-              Find store
-            </Button>
-            <Button variant="link" color="blackAlpha.700" fontWeight="500">
-              Categories
-            </Button>
-            <Button variant="link" color="blackAlpha.700" fontWeight="500">
-              Blogs
-            </Button>
-          </Stack>
-          <Stack alignItems="flex-start" spacing={4}>
-            <Heading fontSize="1.5rem" fontWeight="600">
-              For users
-            </Heading>
-            <Button variant="link" color="blackAlpha.700" fontWeight="500">
-              About Us
-            </Button>
-            <Button variant="link" color="blackAlpha.700" fontWeight="500">
-              Find store
-            </Button>
-            <Button variant="link" color="blackAlpha.700" fontWeight="500">
-              Categories
-            </Button>
-            <Button variant="link" color="blackAlpha.700" fontWeight="500">
-              Blogs
-            </Button>
-          </Stack>
-          <Stack spacing={3} alignItems="flex-start">
-            <Heading fontSize="1.5rem" fontWeight="600">
-              Get app
-            </Heading>
-            <Button p={0}>
-              <Image draggable={false} src="/svg/appstore.svg" h="2.5rem" />
-            </Button>
-            <Button p={0}>
-              <Image draggable={false} src="/svg/playstore.svg" h="2.5rem" />
-            </Button>
-          </Stack>
-        </Grid>
+        <Stack spacing={3} alignItems="flex-start">
+          <Heading fontSize="1.5rem" fontWeight="600">
+            Get app
+          </Heading>
+          <Button p={0}>
+            <Image draggable={false} src="/svg/appstore.svg" h="2.5rem" />
+          </Button>
+          <Button p={0}>
+            <Image draggable={false} src="/svg/playstore.svg" h="2.5rem" />
+          </Button>
+        </Stack>
       </Flex>
-      <HStack px={10} py={4} bg="brand.light">
+      <Grid px={5} w="100%" templateColumns="repeat(4, 1fr)" gap={8}>
+        <Stack alignItems="flex-start" spacing={4}>
+          <Heading fontSize="1.5rem" fontWeight="600">
+            About
+          </Heading>
+          <Button variant="link" color="blackAlpha.700" fontWeight="500">
+            About Us
+          </Button>
+          <Button variant="link" color="blackAlpha.700" fontWeight="500">
+            Find store
+          </Button>
+          <Button variant="link" color="blackAlpha.700" fontWeight="500">
+            Categories
+          </Button>
+          <Button variant="link" color="blackAlpha.700" fontWeight="500">
+            Blogs
+          </Button>
+        </Stack>
+        <Stack alignItems="flex-start" spacing={4}>
+          <Heading fontSize="1.5rem" fontWeight="600">
+            Partnership
+          </Heading>
+          <Button variant="link" color="blackAlpha.700" fontWeight="500">
+            About Us
+          </Button>
+          <Button variant="link" color="blackAlpha.700" fontWeight="500">
+            Find store
+          </Button>
+          <Button variant="link" color="blackAlpha.700" fontWeight="500">
+            Categories
+          </Button>
+          <Button variant="link" color="blackAlpha.700" fontWeight="500">
+            Blogs
+          </Button>
+        </Stack>
+        <Stack alignItems="flex-start" spacing={4}>
+          <Heading fontSize="1.5rem" fontWeight="600">
+            Information
+          </Heading>
+          <Button variant="link" color="blackAlpha.700" fontWeight="500">
+            About Us
+          </Button>
+          <Button variant="link" color="blackAlpha.700" fontWeight="500">
+            Find store
+          </Button>
+          <Button variant="link" color="blackAlpha.700" fontWeight="500">
+            Categories
+          </Button>
+          <Button variant="link" color="blackAlpha.700" fontWeight="500">
+            Blogs
+          </Button>
+        </Stack>
+        <Stack alignItems="flex-start" spacing={4}>
+          <Heading fontSize="1.5rem" fontWeight="600">
+            For users
+          </Heading>
+          <Button variant="link" color="blackAlpha.700" fontWeight="500">
+            About Us
+          </Button>
+          <Button variant="link" color="blackAlpha.700" fontWeight="500">
+            Find store
+          </Button>
+          <Button variant="link" color="blackAlpha.700" fontWeight="500">
+            Categories
+          </Button>
+          <Button variant="link" color="blackAlpha.700" fontWeight="500">
+            Blogs
+          </Button>
+        </Stack>
+      </Grid>
+      <HStack px={5} py={4} bg="brand.light">
         <Text>&copy; 2023 Ecommerce</Text>
         <Spacer />
         <Button
