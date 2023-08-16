@@ -1,25 +1,5 @@
 import useRender from "@/hooks/useRender";
-import {
-  Box,
-  Button,
-  Flex,
-  Grid,
-  GridItem,
-  HStack,
-  Heading,
-  Image,
-  Input,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalOverlay,
-  Select,
-  Stack,
-  Text,
-  Textarea,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Box, Flex, Grid, Heading, Image, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 import { BsArchive, BsSearch } from "react-icons/bs";
 import { BiShieldQuarter } from "react-icons/bi";

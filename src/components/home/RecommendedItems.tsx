@@ -1,27 +1,6 @@
 import useRender from "@/hooks/useRender";
-import {
-  Box,
-  Button,
-  Flex,
-  Grid,
-  GridItem,
-  HStack,
-  Heading,
-  Image,
-  Input,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalOverlay,
-  Select,
-  Stack,
-  Text,
-  Textarea,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Grid, GridItem, Heading, Image, Stack, Text } from "@chakra-ui/react";
 import React from "react";
-import { BsArrowRight, BsChevronRight } from "react-icons/bs";
 
 const RecommendedItems = () => {
   const [render] = useRender();

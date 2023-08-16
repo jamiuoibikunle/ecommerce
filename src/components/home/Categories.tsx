@@ -1,7 +1,6 @@
 import {
   Box,
   Button,
-  Center,
   Circle,
   Flex,
   HStack,

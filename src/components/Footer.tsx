@@ -1,7 +1,6 @@
 import useRender from "@/hooks/useRender";
 import {
   Button,
-  Circle,
   Flex,
   Grid,
   HStack,
@@ -19,7 +18,6 @@ import {
   TbBrandLinkedin,
   TbBrandInstagram,
   TbBrandYoutube,
-  TbBrandApple,
 } from "react-icons/tb";
 
 const Footer = () => {

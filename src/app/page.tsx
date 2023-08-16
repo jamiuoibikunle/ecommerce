@@ -4,7 +4,6 @@ import Holder from "@/components/Holder";
 import Loader from "@/components/Loader";
 import Home from "@/components/home/Home";
 import useMount from "@/hooks/useMount";
-import { Box } from "@chakra-ui/react";
 import React from "react";
 
 const Page = () => {

@@ -11,7 +11,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
-import { BsArrowRight, BsChevronRight } from "react-icons/bs";
+import { BsArrowRight } from "react-icons/bs";
 
 const FeaturedCategoriesTwo = () => {
   const [render] = useRender();

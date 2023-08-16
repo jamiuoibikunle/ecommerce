@@ -1,29 +1,6 @@
 import useRender from "@/hooks/useRender";
-import {
-  Box,
-  Button,
-  Flex,
-  Grid,
-  GridItem,
-  HStack,
-  Heading,
-  Image,
-  Input,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalOverlay,
-  Select,
-  Stack,
-  Text,
-  Textarea,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Grid, Heading, Stack, Text } from "@chakra-ui/react";
 import React from "react";
-import { BsArchive, BsSearch } from "react-icons/bs";
-import { BiShieldQuarter } from "react-icons/bi";
-import { MdSend } from "react-icons/md";
 import ReactCountryFlag from "react-country-flag";
 
 const SuppliersByRegion = () => {

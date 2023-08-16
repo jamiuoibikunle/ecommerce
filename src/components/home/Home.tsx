@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Stack } from "@chakra-ui/react";
+import { Stack } from "@chakra-ui/react";
 import Header from "@/components/Header";
 import Container from "@/components/Container";
 import Categories from "@/components/home/Categories";
