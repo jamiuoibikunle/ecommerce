@@ -2,6 +2,7 @@ import {
   Button,
   Circle,
   Flex,
+  Grid,
   HStack,
   Heading,
   Image,
@@ -24,13 +25,14 @@ const Footer = () => {
   return (
     <Stack>
       <Flex
-        px={10}
+        w="100%"
+        maxW="7xl"
+        mx="auto"
         py={8}
         justifyContent="space-between"
-        wrap={{ base: "wrap", lg: "nowrap" }}
-        rowGap={10}
+        gap={20}
       >
-        <Stack w="xs" spacing={6}>
+        <Stack w="20rem" spacing={6}>
           <HStack>
             <Flex
               justifyContent="center"
@@ -92,123 +94,87 @@ const Footer = () => {
             </Flex>
           </HStack>
         </Stack>
-        <Stack
-          w={{ base: "50%", md: "30%", lg: "fit-content" }}
-          alignItems="flex-start"
-          spacing={4}
-        >
-          <Heading fontSize="1.5rem" fontWeight="600">
-            About
-          </Heading>
-          <Button variant="link" color="blackAlpha.700" fontWeight="500">
-            About Us
-          </Button>
-          <Button variant="link" color="blackAlpha.700" fontWeight="500">
-            Find store
-          </Button>
-          <Button variant="link" color="blackAlpha.700" fontWeight="500">
-            Categories
-          </Button>
-          <Button variant="link" color="blackAlpha.700" fontWeight="500">
-            Blogs
-          </Button>
-        </Stack>
-        <Stack
-          w={{ base: "50%", md: "30%", lg: "fit-content" }}
-          alignItems="flex-start"
-          spacing={4}
-        >
-          <Heading fontSize="1.5rem" fontWeight="600">
-            Partnership
-          </Heading>
-          <Button variant="link" color="blackAlpha.700" fontWeight="500">
-            About Us
-          </Button>
-          <Button variant="link" color="blackAlpha.700" fontWeight="500">
-            Find store
-          </Button>
-          <Button variant="link" color="blackAlpha.700" fontWeight="500">
-            Categories
-          </Button>
-          <Button variant="link" color="blackAlpha.700" fontWeight="500">
-            Blogs
-          </Button>
-        </Stack>
-        <Stack
-          w={{ base: "50%", md: "30%", lg: "fit-content" }}
-          alignItems="flex-start"
-          spacing={4}
-        >
-          <Heading fontSize="1.5rem" fontWeight="600">
-            Information
-          </Heading>
-          <Button variant="link" color="blackAlpha.700" fontWeight="500">
-            About Us
-          </Button>
-          <Button variant="link" color="blackAlpha.700" fontWeight="500">
-            Find store
-          </Button>
-          <Button variant="link" color="blackAlpha.700" fontWeight="500">
-            Categories
-          </Button>
-          <Button variant="link" color="blackAlpha.700" fontWeight="500">
-            Blogs
-          </Button>
-        </Stack>
-        <Stack
-          w={{ base: "50%", md: "30%", lg: "fit-content" }}
-          alignItems="flex-start"
-          spacing={4}
-        >
-          <Heading fontSize="1.5rem" fontWeight="600">
-            For users
-          </Heading>
-          <Button variant="link" color="blackAlpha.700" fontWeight="500">
-            About Us
-          </Button>
-          <Button variant="link" color="blackAlpha.700" fontWeight="500">
-            Find store
-          </Button>
-          <Button variant="link" color="blackAlpha.700" fontWeight="500">
-            Categories
-          </Button>
-          <Button variant="link" color="blackAlpha.700" fontWeight="500">
-            Blogs
-          </Button>
-        </Stack>
-        <Stack
-          w={{ base: "50%", md: "30%", lg: "fit-content" }}
-          alignItems="center"
-          spacing={3}
-        >
-          <Heading alignSelf="flex-start" fontSize="1.25rem" fontWeight="600">
-            Get app
-          </Heading>
-          {/* <HStack w="100%" spacing={5}>
-        <Button py={5} w="50%" colorScheme="none" color="white" bg="black">
-          <HStack>
-            <Image src="/apple-logo.png" />
-            <VStack spacing={0} alignItems="left" textAlign="left">
-              <Text fontSize="0.6rem">Download on the</Text>
-              <Heading fontSize="1rem">App Store</Heading>
-            </VStack>
-          </HStack>
-        </Button>
-        <Button py={5} w="50%" colorScheme="none" color="white" bg="black">
-          <HStack>
-            <Image src="/playstore.png" />
-            <VStack spacing={0} alignItems="left" textAlign="left">
-              <Text fontSize="0.6rem">GET IT ON</Text>
-              <Heading fontSize="1rem">Google Play</Heading>
-            </VStack>
-          </HStack>
-        </Button>
-      </HStack> */}
-          <Stack direction={{ base: "row", lg: "column" }}>
-            <Image src="/appstore.png" h="2.6rem" />
-            <Image src="/google-playstore.png" h="3.5rem" />
+        <Grid w="calc(100% - 20rem)" templateColumns="repeat(5, 1fr)" gap={5}>
+          <Stack alignItems="flex-start" spacing={4}>
+            <Heading fontSize="1.5rem" fontWeight="600">
+              About
+            </Heading>
+            <Button variant="link" color="blackAlpha.700" fontWeight="500">
+              About Us
+            </Button>
+            <Button variant="link" color="blackAlpha.700" fontWeight="500">
+              Find store
+            </Button>
+            <Button variant="link" color="blackAlpha.700" fontWeight="500">
+              Categories
+            </Button>
+            <Button variant="link" color="blackAlpha.700" fontWeight="500">
+              Blogs
+            </Button>
           </Stack>
-        </Stack>
+          <Stack alignItems="flex-start" spacing={4}>
+            <Heading fontSize="1.5rem" fontWeight="600">
+              Partnership
+            </Heading>
+            <Button variant="link" color="blackAlpha.700" fontWeight="500">
+              About Us
+            </Button>
+            <Button variant="link" color="blackAlpha.700" fontWeight="500">
+              Find store
+            </Button>
+            <Button variant="link" color="blackAlpha.700" fontWeight="500">
+              Categories
+            </Button>
+            <Button variant="link" color="blackAlpha.700" fontWeight="500">
+              Blogs
+            </Button>
+          </Stack>
+          <Stack alignItems="flex-start" spacing={4}>
+            <Heading fontSize="1.5rem" fontWeight="600">
+              Information
+            </Heading>
+            <Button variant="link" color="blackAlpha.700" fontWeight="500">
+              About Us
+            </Button>
+            <Button variant="link" color="blackAlpha.700" fontWeight="500">
+              Find store
+            </Button>
+            <Button variant="link" color="blackAlpha.700" fontWeight="500">
+              Categories
+            </Button>
+            <Button variant="link" color="blackAlpha.700" fontWeight="500">
+              Blogs
+            </Button>
+          </Stack>
+          <Stack alignItems="flex-start" spacing={4}>
+            <Heading fontSize="1.5rem" fontWeight="600">
+              For users
+            </Heading>
+            <Button variant="link" color="blackAlpha.700" fontWeight="500">
+              About Us
+            </Button>
+            <Button variant="link" color="blackAlpha.700" fontWeight="500">
+              Find store
+            </Button>
+            <Button variant="link" color="blackAlpha.700" fontWeight="500">
+              Categories
+            </Button>
+            <Button variant="link" color="blackAlpha.700" fontWeight="500">
+              Blogs
+            </Button>
+          </Stack>
+          <Stack spacing={3} alignItems="flex-start">
+            <Heading fontSize="1.5rem" fontWeight="600">
+              Get app
+            </Heading>
+            <Button p={0}>
+              <Image draggable={false} src="/svg/appstore.svg" h="2.5rem" />
+            </Button>
+            <Button p={0}>
+              <Image draggable={false} src="/svg/playstore.svg" h="2.5rem" />
+            </Button>
+          </Stack>
+        </Grid>
       </Flex>
       <HStack px={10} py={4} bg="brand.light">
         <Text>&copy; 2023 Ecommerce</Text>
