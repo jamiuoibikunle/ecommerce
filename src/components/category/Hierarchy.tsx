@@ -1,27 +1,29 @@
 "use client";
 
-import { HStack, Text } from "@chakra-ui/react";
+import { handlePaths } from "@/utils/handlePaths";
+import { Button, HStack, Text } from "@chakra-ui/react";
+import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { BsChevronRight } from "react-icons/bs";
 
 const Hierarchy = () => {
-  console.log(window.location.pathname.split("/"));
+  const paths = usePathname();
+  const resolved = handlePaths(paths as string);
 
   return (
-    <HStack
-      w="100%"
-      maxW="7xl"
-      py={3}
-      spacing={3}
-      borderBottomWidth={1}
-      borderColor="gray.300"
-      color="gray.500"
-    >
-      <Text>Home</Text>
+    <HStack w="100%" maxW="7xl" py={3} px={4} spacing={3} color="gray.500">
+      <Button variant="link" fontWeight={400}>
+        Home
+      </Button>
       <BsChevronRight size={12} />
-      <Text>Clothings</Text>
-      <BsChevronRight size={12} />
-      <Text>Men's wear</Text>
+      {resolved.map((item, index) => (
+        <HStack>
+          <Button variant="link" fontWeight={400}>
+            {item.replaceAll("%20", " ")}
+          </Button>
+          {resolved.length - 1 !== index ? <BsChevronRight size={12} /> : null}
+        </HStack>
+      ))}
     </HStack>
   );
 };

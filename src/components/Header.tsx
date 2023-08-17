@@ -429,7 +429,7 @@ const Tablet = () => {
 const Desktop = () => {
   return (
     <Stack w="100%" maxW="7xl" alignSelf="center">
-      <HStack py={4}>
+      <HStack p={4}>
         <HStack>
           <Flex
             justifyContent="center"
@@ -507,7 +507,7 @@ const Desktop = () => {
         </HStack>
       </HStack>
       <Divider />
-      <HStack spacing={5} py={3} display={{ base: "none", lg: "flex" }}>
+      <HStack p={4} spacing={5} display={{ base: "none", lg: "flex" }}>
         <HiOutlineMenu size={20} />
         <Button variant="link" fontWeight={500} color="black">
           All category
