@@ -18,7 +18,7 @@ const Hierarchy = () => {
       </Button>
       <BsChevronRight size={12} />
       {resolved.map((item: string, index: number) => (
-        <HStack>
+        <HStack key={index}>
           <Button variant="link" fontWeight={400}>
             {item.replaceAll("%20", " ")}
           </Button>
