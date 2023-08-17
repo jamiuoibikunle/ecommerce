@@ -21,6 +21,7 @@ const Categories = () => {
       gap={5}
       wrap={{ base: "wrap", lg: "nowrap" }}
       p={{ base: 0, lg: 4 }}
+      mt={{ lg: 10 }}
       borderWidth={1}
       borderColor="gray.300"
       w="100%"
