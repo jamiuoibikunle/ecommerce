@@ -107,7 +107,7 @@ const Categories = () => {
   );
 };
 
-const CustomButton = ({ title, link }: any) => {
+export const CustomButton = ({ title, link }: any) => {
   const [isDesktop] = useMediaQuery("(min-width: 768px)");
 
   return isDesktop ? (

@@ -1,5 +1,6 @@
 "use client";
 
+import useRender from "@/hooks/useRender";
 import { handlePaths } from "@/utils/handlePaths";
 import { Button, HStack, Text } from "@chakra-ui/react";
 import { usePathname } from "next/navigation";
@@ -16,7 +17,7 @@ const Hierarchy = () => {
         Home
       </Button>
       <BsChevronRight size={12} />
-      {resolved.map((item, index) => (
+      {resolved.map((item: string, index: number) => (
         <HStack>
           <Button variant="link" fontWeight={400}>
             {item.replaceAll("%20", " ")}
