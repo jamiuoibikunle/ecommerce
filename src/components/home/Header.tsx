@@ -1,8 +1,8 @@
 import React from "react";
 import useRender from "@/hooks/useRender";
-import Tablet from "@/components/header/Tablet";
-import Desktop from "@/components/header/Desktop";
-import Mobile from "@/components/header/Mobile";
+import Tablet from "@/components/home/header/Tablet";
+import Desktop from "@/components/home/header/Desktop";
+import Mobile from "@/components/home/header/Mobile";
 
 const Header = () => {
   const [render] = useRender();

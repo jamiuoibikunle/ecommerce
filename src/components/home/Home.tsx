@@ -1,6 +1,6 @@
 import React from "react";
 import { Stack } from "@chakra-ui/react";
-import Header from "@/components/Header";
+import Header from "@/components/home/Header";
 import Container from "@/components/Container";
 import Categories from "@/components/home/Categories";
 import Deals from "@/components/home/Deals";
