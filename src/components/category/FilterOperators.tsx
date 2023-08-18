@@ -25,6 +25,7 @@ import {
 } from "@chakra-ui/react";
 import { usePathname, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
+import { BsStar, BsStarFill } from "react-icons/bs";
 
 const FilterOpeators = () => {
   return (
@@ -35,6 +36,7 @@ const FilterOpeators = () => {
         <Features />
         <PriceRange />
         <Condition />
+        <Ratings />
       </Accordion>
     </Stack>
   );
@@ -307,6 +309,43 @@ const Condition = () => {
               ))}
             </Stack>
           </RadioGroup>
+        </Stack>
+      </AccordionPanel>
+    </AccordionItem>
+  );
+};
+
+const Ratings = () => {
+  const [ratings] = useState([5, 4, 3, 2]);
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleExpanded = () => {
+    setIsExpanded(!isExpanded);
+  };
+
+  return (
+    <AccordionItem borderWidth={0} pb={4}>
+      <AccordionButton px={0}>
+        <Box as="span" flex="1" textAlign="left">
+          <Heading fontSize="1rem" fontWeight={600}>
+            Ratings
+          </Heading>
+        </Box>
+        <AccordionIcon />
+      </AccordionButton>
+      <AccordionPanel px={0}>
+        <Stack spacing={5}>
+          {ratings.map((rating, index) => {
+            return (
+              <Checkbox key={index} spacing={3}>
+                <HStack>
+                  {[1, 2, 3, 4, 5].map((item, index) => (
+                    <BsStarFill color={rating >= item ? "gold" : "gray"} />
+                  ))}
+                </HStack>
+              </Checkbox>
+            );
+          })}
         </Stack>
       </AccordionPanel>
     </AccordionItem>
