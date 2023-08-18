@@ -8,6 +8,7 @@ import {
   AccordionPanel,
   Box,
   Button,
+  Checkbox,
   HStack,
   Heading,
   Stack,
@@ -130,16 +131,16 @@ const Brands = () => {
         <Stack spacing={isExpanded ? 5 : 0}>
           <Stack
             spacing={5}
-            maxHeight={isExpanded ? "fit-content" : "10rem"}
+            maxHeight={isExpanded ? "fit-content" : "10.5rem"}
             overflowY="hidden"
           >
             {brands.map((item, index) => {
               return (
-                <Button variant="link" fontWeight={500} key={index}>
+                <Checkbox key={index} w="100%">
                   <Text w="100%" textAlign="left" color="blackAlpha.600">
                     {item.title}
                   </Text>
-                </Button>
+                </Checkbox>
               );
             })}
           </Stack>
