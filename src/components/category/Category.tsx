@@ -7,6 +7,8 @@ import Hierarchy from "./Hierarchy";
 import Categories from "./Categories";
 import useRender from "@/hooks/useRender";
 import FilterOpeators from "./FilterOperators";
+import Newsletter from "../Newsletter";
+import Footer from "../Footer";
 
 const Category = () => {
   const [render] = useRender();
@@ -21,8 +23,8 @@ const Category = () => {
           {render === "desktop" ? <FilterOpeators /> : null}
         </Flex>
       </Container>
-      {/* <Newsletter />
-      <Footer /> */}
+      <Newsletter />
+      <Footer />
     </Stack>
   );
 };

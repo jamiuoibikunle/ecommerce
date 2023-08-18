@@ -24,13 +24,12 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { usePathname, useRouter } from "next/navigation";
-import { motion } from "framer-motion";
-import { BsStar, BsStarFill } from "react-icons/bs";
+import { BsStarFill } from "react-icons/bs";
 
 const FilterOpeators = () => {
   return (
     <Stack w="16rem" borderTopWidth={1} py={3}>
-      <Accordion allowToggle allowMultiple defaultIndex={[0, 1]}>
+      <Accordion allowToggle allowMultiple defaultIndex={[0, 1, 2]}>
         <SubCategory />
         <Brands />
         <Features />
