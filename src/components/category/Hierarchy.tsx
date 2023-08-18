@@ -12,7 +12,7 @@ const Hierarchy = () => {
   const resolved = handlePaths(paths as string);
 
   return (
-    <HStack w="100%" maxW="7xl" py={3} px={4} spacing={3} color="gray.500">
+    <HStack w="100%" maxW="7xl" pb={3} pt={5} px={4} spacing={3} color="gray.500">
       <Button variant="link" fontWeight={400}>
         Home
       </Button>

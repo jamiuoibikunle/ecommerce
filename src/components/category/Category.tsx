@@ -1,11 +1,12 @@
 import React from "react";
-import { Stack } from "@chakra-ui/react";
+import { Flex, Stack } from "@chakra-ui/react";
 import Header from "@/components/category/Header";
-import Container from "@/components/Container";
+import Container from "@/components/category/Container";
 
 import Hierarchy from "./Hierarchy";
 import Categories from "./Categories";
 import useRender from "@/hooks/useRender";
+import FilterOpeators from "./FilterOperators";
 
 const Category = () => {
   const [render] = useRender();
@@ -16,6 +17,9 @@ const Category = () => {
       <Container>
         {render !== "desktop" ? <Categories /> : null}
         {render === "desktop" ? <Hierarchy /> : null}
+        <Flex w="100%" px={{ lg: 5 }}>
+          {render === "desktop" ? <FilterOpeators /> : null}
+        </Flex>
       </Container>
       {/* <Newsletter />
       <Footer /> */}
