@@ -14,6 +14,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { usePathname, useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 
 const FilterOpeators = () => {
   return (
@@ -46,7 +47,7 @@ const SubCategory = () => {
   };
 
   return (
-    <AccordionItem borderWidth={0}>
+    <AccordionItem borderWidth={0} pb={4}>
       <AccordionButton px={0}>
         <Box as="span" flex="1" textAlign="left">
           <Heading fontSize="1rem" fontWeight={600}>
