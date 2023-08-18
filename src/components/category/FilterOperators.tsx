@@ -339,7 +339,7 @@ const Ratings = () => {
               <Checkbox key={index} spacing={3}>
                 <HStack>
                   {[1, 2, 3, 4, 5].map((item, index) => (
-                    <BsStarFill color={rating >= item ? "gold" : "gray"} />
+                    <BsStarFill color={rating >= item ? "#ff9017" : "#bdc4cd"} />
                   ))}
                 </HStack>
               </Checkbox>
