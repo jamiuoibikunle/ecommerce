@@ -9,6 +9,7 @@ import {
   Text,
   useMediaQuery,
 } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { BsPersonFill } from "react-icons/bs";
 
@@ -36,14 +37,20 @@ const Categories = () => {
           w={{ base: "fit-content", lg: "max-content" }}
           flexDir={{ base: "row", lg: "column" }}
         >
-          <CustomButton link="" title="Automobiles" />
-          <CustomButton link="" title="Clothes and wear" />
-          <CustomButton link="" title="Home interiors" />
-          <CustomButton link="" title="Computer and tech" />
-          <CustomButton link="" title="Tools, equipments" />
-          <CustomButton link="" title="Sports and outdoor" />
-          <CustomButton link="" title="Animal and pets" />
-          <CustomButton link="" title="Machinery tools" />
+          <CustomButton link="/automobiles" title="Automobiles" />
+          <CustomButton link="/clothes%20and%20wear" title="Clothes and wear" />
+          <CustomButton link="/home%20interiors" title="Home interiors" />
+          <CustomButton
+            link="/computer%20and%20tech"
+            title="Computer and tech"
+          />
+          <CustomButton link="/tools%20equipments" title="Tools, equipments" />
+          <CustomButton
+            link="/sports%20and%20outdoor"
+            title="Sports and outdoor"
+          />
+          <CustomButton link="/animal%20and%20pets" title="Animal and pets" />
+          <CustomButton link="/machinery%20tool" title="Machinery tools" />
           <CustomButton link="" title="More category" />
         </Stack>
       </Box>
@@ -109,12 +116,14 @@ const Categories = () => {
 
 export const CustomButton = ({ title, link }: any) => {
   const [isDesktop] = useMediaQuery("(min-width: 768px)");
+  const router = useRouter();
 
   return isDesktop ? (
     <Button
       colorScheme={title === "Automobiles" ? "gray" : "none"}
       color="black"
       w={{ base: "fit-content", lg: "15rem" }}
+      onClick={() => router.push(`/category/${link}`)}
     >
       <Text w="100%" textAlign="left" fontWeight={500}>
         {title}
@@ -125,6 +134,7 @@ export const CustomButton = ({ title, link }: any) => {
       colorScheme="gray"
       color="blue.500"
       w={{ base: "fit-content", lg: "15rem" }}
+      onClick={() => router.push(`/category/${link}`)}
     >
       <Text w="100%" textAlign="left" fontWeight={500}>
         {title}
