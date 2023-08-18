@@ -14,6 +14,8 @@ import {
   HStack,
   Heading,
   Input,
+  Radio,
+  RadioGroup,
   Slider,
   SliderFilledTrack,
   SliderThumb,
@@ -32,6 +34,7 @@ const FilterOpeators = () => {
         <Brands />
         <Features />
         <PriceRange />
+        <Condition />
       </Accordion>
     </Stack>
   );
@@ -268,6 +271,42 @@ const PriceRange = () => {
               Apply
             </Button>
           </Stack>
+        </Stack>
+      </AccordionPanel>
+    </AccordionItem>
+  );
+};
+
+const Condition = () => {
+  const [conditions] = useState([
+    "Any",
+    "Refurbished",
+    "Brand new",
+    "Old items",
+  ]);
+  const [value, setValue] = useState("Any");
+
+  return (
+    <AccordionItem borderWidth={0} pb={4}>
+      <AccordionButton px={0}>
+        <Box as="span" flex="1" textAlign="left">
+          <Heading fontSize="1rem" fontWeight={600}>
+            Conditions
+          </Heading>
+        </Box>
+        <AccordionIcon />
+      </AccordionButton>
+      <AccordionPanel px={0}>
+        <Stack>
+          <RadioGroup onChange={setValue} value={value}>
+            <Stack spacing={4}>
+              {conditions.map((item, index) => (
+                <Radio value={item} key={index}>
+                  {item}
+                </Radio>
+              ))}
+            </Stack>
+          </RadioGroup>
         </Stack>
       </AccordionPanel>
     </AccordionItem>
