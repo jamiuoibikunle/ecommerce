@@ -15,6 +15,7 @@ import React from "react";
 import {
   BsArchive,
   BsGridFill,
+  BsHeart,
   BsSearch,
   BsStarFill,
   BsXLg,
@@ -192,19 +193,27 @@ const ProductCard = () => {
         <Image h="100%" src="/deals-smartwatches.png" />
       </Flex>
       <Stack borderTopWidth={1} borderColor="gray.200" p={5}>
-        <HStack>
-          <Stack>
+        <HStack justifyContent="space-between">
+          <Stack spacing={0}>
             <HStack>
-              <Text>$99.50</Text>
-              <Text>$1128.00</Text>
+              <Text fontWeight={600}>$99.50</Text>
+              <Text as="s" color="blackAlpha.600">
+                $1128.00
+              </Text>
             </HStack>
-            <HStack>
+            <HStack spacing={1}>
               {Array.from("1234").map((item, index) => (
                 <BsStarFill key={index} color="#ff9017" />
               ))}
               <BsStarFill color="#bdc4cd" />
+              <Text ml={2} color="#ff9017">
+                4.2
+              </Text>
             </HStack>
           </Stack>
+          <Button color="blue.500" variant="outline" borderColor="gray.200" p={0}>
+            <BsHeart />
+          </Button>
         </HStack>
       </Stack>
     </Stack>
