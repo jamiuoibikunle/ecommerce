@@ -29,9 +29,13 @@ import { MdSend } from "react-icons/md";
 import { PiListFill } from "react-icons/pi";
 import FilterOpeators from "@/components/category/FilterOperators";
 import useLayout from "@/hooks/useLayout";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "@/types";
+import { handleLayout } from "@/features/slices/layoutSlice";
 
 const Mobile = () => {
-  const [layout] = useLayout();
+  const dispatch = useDispatch<any>();
+  const { layout } = useSelector((state: RootState) => state.layout);
 
   return (
     <Stack w="100%" py={5} spacing={3}>
@@ -59,7 +63,9 @@ const Mobile = () => {
                 bg={layout === item.title ? "blackAlpha.100" : "transparent"}
                 color="black"
                 p={0}
-                onClick={() => localStorage.setItem("layout", item.title)}
+                onClick={() => {
+                  dispatch(handleLayout(item.title));
+                }}
               >
                 {item.icon}
               </Button>

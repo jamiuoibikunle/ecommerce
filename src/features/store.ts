@@ -1,10 +1,10 @@
 "use client";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import counterReducer from "./slices/counterSlice";
+import layoutReducer from "./slices/layoutSlice";
 
 
 const rootReducer = combineReducers({
-    counter: counterReducer,
+    layout: layoutReducer,
     //add all your reducers here
 },);
 

@@ -30,6 +30,8 @@ import FilterOpeators from "./FilterOperators";
 import useLayout from "@/hooks/useLayout";
 import Desktop from "@/components/category/main/Desktop";
 import Mobile from "@/components/category/main/Mobile";
+import { useSelector } from "react-redux";
+import { RootState } from "@/types";
 
 const Main = () => {
   const [render] = useRender();
