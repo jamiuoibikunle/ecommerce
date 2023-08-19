@@ -316,11 +316,6 @@ const Condition = () => {
 
 const Ratings = () => {
   const [ratings] = useState([5, 4, 3, 2]);
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  const toggleExpanded = () => {
-    setIsExpanded(!isExpanded);
-  };
 
   return (
     <AccordionItem borderWidth={0} pb={4}>
@@ -339,7 +334,10 @@ const Ratings = () => {
               <Checkbox key={index} spacing={3}>
                 <HStack>
                   {[1, 2, 3, 4, 5].map((item, index) => (
-                    <BsStarFill key={index} color={rating >= item ? "#ff9017" : "#bdc4cd"} />
+                    <BsStarFill
+                      key={index}
+                      color={rating >= item ? "#ff9017" : "#bdc4cd"}
+                    />
                   ))}
                 </HStack>
               </Checkbox>
