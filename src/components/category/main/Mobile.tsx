@@ -29,7 +29,6 @@ import { MdSend } from "react-icons/md";
 import { PiListFill } from "react-icons/pi";
 import FilterOpeators from "@/components/category/FilterOperators";
 import useLayout from "@/hooks/useLayout";
-import { ProductCard } from "../Main";
 
 const Mobile = () => {
   const [layout] = useLayout();
@@ -130,6 +129,86 @@ const Mobile = () => {
           <BsChevronRight />
         </Button>
       </HStack>
+    </Stack>
+  );
+};
+
+const ProductCard = ({ layout }: { layout: string }) => {
+  return layout === "list" ? (
+    <Flex
+      bg="white"
+      p={5}
+      borderWidth={1}
+      borderColor="gray.200"
+      borderRadius={5}
+      gap={5}
+    >
+      <Flex w="7rem" justifyContent="center" alignItems="center">
+        <Image src="/deals-smartwatches.png" />
+      </Flex>
+      <Stack as="span" flex="1" spacing={2}>
+        <Text>Canon Camera EOS 2000, Black 19x zoom</Text>
+        <HStack>
+          <Text fontWeight={600}>$99.50</Text>
+          <Text as="s" color="blackAlpha.600">
+            $1128.00
+          </Text>
+        </HStack>
+        <HStack spacing={0}>
+          <HStack spacing={0}>
+            {Array.from("1234").map((item, index) => (
+              <BsStarFill key={index} color="#ff9017" />
+            ))}
+            <BsStarFill color="#bdc4cd" />
+            <Text ml={2} color="#ff9017">
+              4.2
+            </Text>
+          </HStack>
+        </HStack>
+        <Text color="teal.300">Free shipping</Text>
+      </Stack>
+    </Flex>
+  ) : (
+    <Stack
+      bg="white"
+      borderColor="gray.200"
+      borderWidth={1}
+      borderRadius={5}
+      spacing={3}
+    >
+      <Flex h="15rem" p={5} alignItems="center" justifyContent="center">
+        <Image h="100%" src="/deals-smartwatches.png" />
+      </Flex>
+      <Stack borderTopWidth={1} borderColor="gray.200" p={5} spacing={4}>
+        <HStack justifyContent="space-between">
+          <Stack spacing={0}>
+            <HStack>
+              <Text fontWeight={600}>$99.50</Text>
+              <Text as="s" color="blackAlpha.600">
+                $1128.00
+              </Text>
+            </HStack>
+            <HStack spacing={1}>
+              {Array.from("1234").map((item, index) => (
+                <BsStarFill key={index} color="#ff9017" />
+              ))}
+              <BsStarFill color="#bdc4cd" />
+              <Text ml={2} color="#ff9017">
+                4.2
+              </Text>
+            </HStack>
+          </Stack>
+          <Button
+            color="blue.500"
+            variant="outline"
+            borderColor="gray.200"
+            p={0}
+          >
+            <BsHeart />
+          </Button>
+        </HStack>
+        <Text>GoPro HERO6 4K Action Camera - Black</Text>
+      </Stack>
     </Stack>
   );
 };

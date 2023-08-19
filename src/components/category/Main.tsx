@@ -97,7 +97,7 @@ const Tablet = () => {
   );
 };
 
-export const ProductCard = ({ layout }: { layout: string }) => {
+const ProductCard = ({ layout }: { layout: string }) => {
   return layout === "list" ? (
     <Flex
       bg="white"
