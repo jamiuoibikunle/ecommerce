@@ -162,6 +162,7 @@ const Desktop = () => {
               bg={layout === item.title ? "blackAlpha.100" : "transparent"}
               color="black"
               p={1}
+              onClick={() => localStorage.setItem("layout", item.title)}
             >
               {item.icon}
             </Button>
