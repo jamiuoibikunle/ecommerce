@@ -27,6 +27,7 @@ import { BiShieldQuarter } from "react-icons/bi";
 import { MdSend } from "react-icons/md";
 import { PiListFill } from "react-icons/pi";
 import FilterOpeators from "./FilterOperators";
+import useLayout from "@/hooks/useLayout";
 
 const Main = () => {
   const [render] = useRender();
@@ -55,6 +56,8 @@ const Main = () => {
 };
 
 const Mobile = () => {
+  const [layout] = useLayout();
+
   return (
     <Stack w="100%" spacing={5} px={4} py={5}>
       <Heading fontSize="1.5rem" fontWeight={500}>
@@ -84,7 +87,7 @@ const Mobile = () => {
               icon: <BiShieldQuarter size={20} />,
             },
           ].map(({ icon, image, title }, index) => (
-            <ProductCard key={index} />
+            <ProductCard key={index} layout={layout} />
           ))}
         </Flex>
       </Box>
@@ -93,6 +96,8 @@ const Mobile = () => {
 };
 
 const Tablet = () => {
+  const [layout] = useLayout();
+
   return (
     <Stack w="100%" maxW="7xl" spacing={5} p={{ base: 5, lg: 0 }}>
       <Heading fontSize="1.5rem" fontWeight={500}>
@@ -122,7 +127,7 @@ const Tablet = () => {
               icon: <BiShieldQuarter size={20} />,
             },
           ].map(({ icon, image, title }, index) => (
-            <ProductCard key={index} />
+            <ProductCard key={index} layout={layout} />
           ))}
         </Flex>
       </Box>
@@ -131,7 +136,7 @@ const Tablet = () => {
 };
 
 const Desktop = () => {
-  const [layout] = useState("list");
+  const [layout] = useLayout();
 
   return (
     <Stack w="100%" spacing={5} pb={36}>
@@ -183,7 +188,7 @@ const Desktop = () => {
         gap={5}
       >
         {Array.from("123456789").map((item, index) => {
-          return <ProductCard key={index} />;
+          return <ProductCard key={index} layout={layout} />;
         })}
       </Grid>
       <HStack spacing={0} alignSelf="flex-end">
@@ -225,9 +230,7 @@ const Desktop = () => {
   );
 };
 
-const ProductCard = () => {
-  const [layout] = useState("list");
-
+const ProductCard = ({ layout }: { layout: string }) => {
   return layout === "list" ? (
     <Flex
       bg="white"
