@@ -1,5 +1,6 @@
 import useRender from "@/hooks/useRender";
 import {
+  Box,
   Button,
   Flex,
   Grid,
@@ -190,18 +191,27 @@ const Desktop = () => {
           </Stack>
         </Grid>
       </Flex>
-      <HStack px={10} py={4} bg="brand.light">
-        <Text>&copy; 2023 Ecommerce</Text>
-        <Spacer />
-        <Button
-          rightIcon={<BsChevronUp />}
-          variant="link"
-          color="black"
-          fontWeight="500"
-        >
-          English
-        </Button>
-      </HStack>
+      <Flex
+        alignItems="center"
+        justifyContent="center"
+        px={10}
+        py={4}
+        bg="brand.light"
+        w="100%"
+      >
+        <HStack w="100%" maxW="7xl">
+          <Text>&copy; 2023 Ecommerce</Text>
+          <Spacer />
+          <Button
+            rightIcon={<BsChevronUp />}
+            variant="link"
+            color="black"
+            fontWeight="500"
+          >
+            English
+          </Button>
+        </HStack>
+      </Flex>
     </Stack>
   );
 };

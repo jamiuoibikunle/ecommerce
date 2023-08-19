@@ -39,7 +39,7 @@ const Main = () => {
   switch (render) {
     case "desktop":
       return (
-        <Flex w="100%" px={{ lg: 5 }} gap={5}>
+        <Flex w="100%" maxW="7xl" px={{ lg: 5 }} gap={5}>
           {render === "desktop" ? (
             <Box w="16rem">
               <FilterOpeators />
