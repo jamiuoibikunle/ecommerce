@@ -7,6 +7,7 @@ const Container = ({ children }: Children) => {
     <Stack
       w="100%"
       px={{ lg: 10 }}
+      pb={10}
       spacing={{ base: 0, lg: 10 }}
       bg="brand.lighter"
       alignItems="center"
