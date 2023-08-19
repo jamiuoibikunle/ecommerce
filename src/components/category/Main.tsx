@@ -12,7 +12,13 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
-import { BsArchive, BsGridFill, BsSearch, BsXLg } from "react-icons/bs";
+import {
+  BsArchive,
+  BsGridFill,
+  BsSearch,
+  BsStarFill,
+  BsXLg,
+} from "react-icons/bs";
 import { BiShieldQuarter } from "react-icons/bi";
 import { MdSend } from "react-icons/md";
 import { PiListFill } from "react-icons/pi";
@@ -74,7 +80,7 @@ const Mobile = () => {
               icon: <BiShieldQuarter size={20} />,
             },
           ].map(({ icon, image, title }, index) => (
-            <ProductCard key={index} icon={icon} image={image} title={title} />
+            <ProductCard key={index} />
           ))}
         </Flex>
       </Box>
@@ -112,7 +118,7 @@ const Tablet = () => {
               icon: <BiShieldQuarter size={20} />,
             },
           ].map(({ icon, image, title }, index) => (
-            <ProductCard key={index} icon={icon} image={image} title={title} />
+            <ProductCard key={index} />
           ))}
         </Flex>
       </Box>
@@ -164,45 +170,43 @@ const Desktop = () => {
           Clear all filter
         </Button>
       </HStack>
+      <Grid templateColumns="repeat(3, 1fr)" gap={5}>
+        {Array.from("123456789").map((item, index) => {
+          return <ProductCard key={index} />;
+        })}
+      </Grid>
     </Stack>
   );
 };
 
-const ProductCard = ({ icon, image, title }: any) => {
+const ProductCard = () => {
   return (
     <Stack
-      w="100%"
       bg="white"
+      borderColor="gray.200"
       borderWidth={1}
-      borderColor="gray.300"
       borderRadius={5}
-      cursor="pointer"
-      _hover={{
-        borderColor: "blue.300",
-      }}
-      transitionDuration="0.5s"
-      pos="relative"
-      scrollSnapAlign="start"
+      spacing={3}
     >
-      <Flex
-        alignItems="center"
-        justifyContent="center"
-        bgColor="gray.300"
-        h="3rem"
-        w="3rem"
-        borderRadius="100%"
-        pos="absolute"
-        right="1rem"
-        top="6.5rem"
-        borderWidth={2}
-        borderColor="white"
-      >
-        {icon}
+      <Flex h="15rem" p={5} alignItems="center" justifyContent="center">
+        <Image h="100%" src="/deals-smartwatches.png" />
       </Flex>
-      <Image src={image} draggable={false} objectFit="cover" h="8rem" />
-      <Text w="15rem" p={5} fontWeight={500}>
-        {title}
-      </Text>
+      <Stack borderTopWidth={1} borderColor="gray.200" p={5}>
+        <HStack>
+          <Stack>
+            <HStack>
+              <Text>$99.50</Text>
+              <Text>$1128.00</Text>
+            </HStack>
+            <HStack>
+              {Array.from("1234").map((item, index) => (
+                <BsStarFill key={index} color="#ff9017" />
+              ))}
+              <BsStarFill color="#bdc4cd" />
+            </HStack>
+          </Stack>
+        </HStack>
+      </Stack>
     </Stack>
   );
 };
