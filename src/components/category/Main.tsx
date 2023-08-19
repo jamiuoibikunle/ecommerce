@@ -151,12 +151,22 @@ const Desktop = () => {
           12,911 items in <b>Mobile accessory</b>
         </Text>
         <Spacer />
-        <Button colorScheme="none" bg="blackAlpha.100" color="black" p={1}>
-          <BsGridFill />
-        </Button>
-        <Button colorScheme="none" color="black" p={1}>
-          <PiListFill />
-        </Button>
+        {[
+          { title: "grid", icon: <BsGridFill /> },
+          { title: "list", icon: <PiListFill /> },
+        ].map((item, index) => {
+          return (
+            <Button
+              key={index}
+              colorScheme="none"
+              bg={layout === item.title ? "blackAlpha.100" : "transparent"}
+              color="black"
+              p={1}
+            >
+              {item.icon}
+            </Button>
+          );
+        })}
       </HStack>
       <HStack>
         {["Samsung", "Apple", "Poco", "Metallic", "4 star", "3 star"].map(
