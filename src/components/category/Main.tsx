@@ -28,6 +28,8 @@ import { MdSend } from "react-icons/md";
 import { PiListFill } from "react-icons/pi";
 import FilterOpeators from "./FilterOperators";
 import useLayout from "@/hooks/useLayout";
+import Desktop from "@/components/category/main/Desktop";
+import Mobile from "@/components/category/main/Mobile";
 
 const Main = () => {
   const [render] = useRender();
@@ -53,46 +55,6 @@ const Main = () => {
     default:
       return <Mobile />;
   }
-};
-
-const Mobile = () => {
-  const [layout] = useLayout();
-
-  return (
-    <Stack w="100%" spacing={5} px={4} py={5}>
-      <Heading fontSize="1.5rem" fontWeight={500}>
-        Our extra services
-      </Heading>
-      <Box overflow="auto" scrollSnapType="x mandatory">
-        <Flex w="5xl" gap={3}>
-          {[
-            {
-              title: "Source from Industry Hubs",
-              image: "/extraservices01.png",
-              icon: <BsSearch size={15} />,
-            },
-            {
-              title: "Customize Your Products",
-              image: "/extraservices02.png",
-              icon: <BsArchive size={18} />,
-            },
-            {
-              title: "Fast, reliable shipping by ocean or air",
-              image: "/extraservices03.png",
-              icon: <MdSend size={18} />,
-            },
-            {
-              title: "Product monitoring and inspection",
-              image: "/extraservices04.png",
-              icon: <BiShieldQuarter size={20} />,
-            },
-          ].map(({ icon, image, title }, index) => (
-            <ProductCard key={index} layout={layout} />
-          ))}
-        </Flex>
-      </Box>
-    </Stack>
-  );
 };
 
 const Tablet = () => {
@@ -135,113 +97,7 @@ const Tablet = () => {
   );
 };
 
-const Desktop = () => {
-  const [layout] = useLayout();
-
-  return (
-    <Stack w="100%" spacing={5} pb={36}>
-      <HStack
-        bg="white"
-        p={2}
-        borderRadius={5}
-        borderColor="gray.200"
-        borderWidth={1}
-      >
-        <Text>
-          12,911 items in <b>Mobile accessory</b>
-        </Text>
-        <Spacer />
-        {[
-          { title: "grid", icon: <BsGridFill /> },
-          { title: "list", icon: <PiListFill /> },
-        ].map((item, index) => {
-          return (
-            <Button
-              key={index}
-              colorScheme="none"
-              bg={layout === item.title ? "blackAlpha.100" : "transparent"}
-              color="black"
-              p={1}
-              onClick={() => localStorage.setItem("layout", item.title)}
-            >
-              {item.icon}
-            </Button>
-          );
-        })}
-      </HStack>
-      <HStack>
-        {["Samsung", "Apple", "Poco", "Metallic", "4 star", "3 star"].map(
-          (item, index) => {
-            return (
-              <Button
-                key={index}
-                variant="outline"
-                colorScheme="blue"
-                fontWeight={500}
-                borderColor="blue.500"
-                bg="white"
-                color="black"
-                rightIcon={<BsXLg />}
-              >
-                {item}
-              </Button>
-            );
-          }
-        )}
-        <Button variant="link" colorScheme="blue" fontWeight={500} ml={4}>
-          Clear all filter
-        </Button>
-      </HStack>
-      <Grid
-        templateColumns={
-          layout === "list" ? "repeat(1, 1fr)" : "repeat(3, 1fr)"
-        }
-        gap={5}
-      >
-        {Array.from("123456789").map((item, index) => {
-          return <ProductCard key={index} layout={layout} />;
-        })}
-      </Grid>
-      <HStack spacing={0} alignSelf="flex-end">
-        <Button
-          fontWeight={500}
-          p={0}
-          borderRadius={0}
-          colorScheme="none"
-          variant="outline"
-          borderColor="gray.200"
-        >
-          <BsChevronLeft />
-        </Button>
-        {Array.from("123").map((item, index) => (
-          <Button
-            fontWeight={500}
-            key={index}
-            p={0}
-            borderRadius={0}
-            colorScheme="none"
-            variant="outline"
-            borderColor="gray.200"
-          >
-            {item}
-          </Button>
-        ))}
-        <Button
-          fontWeight={500}
-          p={0}
-          borderRadius={0}
-          colorScheme="none"
-          variant="outline"
-          borderColor="gray.200"
-        >
-          <BsChevronRight />
-        </Button>
-      </HStack>
-    </Stack>
-  );
-};
-
-const ProductCard = ({ layout }: { layout: string }) => {
+export const ProductCard = ({ layout }: { layout: string }) => {
   return layout === "list" ? (
     <Flex
       bg="white"
