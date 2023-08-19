@@ -12,7 +12,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
-import { BsArchive, BsGridFill, BsSearch } from "react-icons/bs";
+import { BsArchive, BsGridFill, BsSearch, BsXLg } from "react-icons/bs";
 import { BiShieldQuarter } from "react-icons/bi";
 import { MdSend } from "react-icons/md";
 import { PiListFill } from "react-icons/pi";
@@ -139,6 +139,29 @@ const Desktop = () => {
         </Button>
         <Button colorScheme="none" color="black" p={1}>
           <PiListFill />
+        </Button>
+      </HStack>
+      <HStack>
+        {["Samsung", "Apple", "Poco", "Metallic", "4 star", "3 star"].map(
+          (item, index) => {
+            return (
+              <Button
+                key={index}
+                variant="outline"
+                colorScheme="blue"
+                fontWeight={500}
+                borderColor="blue.500"
+                bg="white"
+                color="black"
+                rightIcon={<BsXLg />}
+              >
+                {item}
+              </Button>
+            );
+          }
+        )}
+        <Button variant="link" colorScheme="blue" fontWeight={500} ml={4}>
+          Clear all filter
         </Button>
       </HStack>
     </Stack>
