@@ -192,7 +192,7 @@ const ProductCard = () => {
       <Flex h="15rem" p={5} alignItems="center" justifyContent="center">
         <Image h="100%" src="/deals-smartwatches.png" />
       </Flex>
-      <Stack borderTopWidth={1} borderColor="gray.200" p={5}>
+      <Stack borderTopWidth={1} borderColor="gray.200" p={5} spacing={4}>
         <HStack justifyContent="space-between">
           <Stack spacing={0}>
             <HStack>
@@ -211,10 +211,16 @@ const ProductCard = () => {
               </Text>
             </HStack>
           </Stack>
-          <Button color="blue.500" variant="outline" borderColor="gray.200" p={0}>
+          <Button
+            color="blue.500"
+            variant="outline"
+            borderColor="gray.200"
+            p={0}
+          >
             <BsHeart />
           </Button>
         </HStack>
+        <Text>GoPro HERO6 4K Action Camera - Black</Text>
       </Stack>
     </Stack>
   );
