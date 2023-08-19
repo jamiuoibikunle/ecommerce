@@ -14,6 +14,8 @@ import {
 import React from "react";
 import {
   BsArchive,
+  BsChevronLeft,
+  BsChevronRight,
   BsGridFill,
   BsHeart,
   BsSearch,
@@ -129,7 +131,7 @@ const Tablet = () => {
 
 const Desktop = () => {
   return (
-    <Stack w="100%" spacing={5}>
+    <Stack w="100%" spacing={5} pb={36}>
       <HStack
         bg="white"
         p={2}
@@ -176,6 +178,41 @@ const Desktop = () => {
           return <ProductCard key={index} />;
         })}
       </Grid>
+      <HStack spacing={0} alignSelf="flex-end">
+        <Button
+          fontWeight={500}
+          p={0}
+          borderRadius={0}
+          colorScheme="none"
+          variant="outline"
+          borderColor="gray.200"
+        >
+          <BsChevronLeft />
+        </Button>
+        {Array.from("123").map((item, index) => (
+          <Button
+            fontWeight={500}
+            key={index}
+            p={0}
+            borderRadius={0}
+            colorScheme="none"
+            variant="outline"
+            borderColor="gray.200"
+          >
+            {item}
+          </Button>
+        ))}
+        <Button
+          fontWeight={500}
+          p={0}
+          borderRadius={0}
+          colorScheme="none"
+          variant="outline"
+          borderColor="gray.200"
+        >
+          <BsChevronRight />
+        </Button>
+      </HStack>
     </Stack>
   );
 };
