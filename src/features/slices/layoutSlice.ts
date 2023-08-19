@@ -3,7 +3,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    layout: localStorage.getItem("layout") || "grid",
+    layout: "grid",
 };
 
 export const layoutSlice = createSlice({

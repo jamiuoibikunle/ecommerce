@@ -1,9 +1,23 @@
+import { handleLayout } from "@/features/slices/layoutSlice";
 import { Box, Flex, Stack, Text } from "@chakra-ui/react";
 import { AnimatePresence, motion } from "framer-motion";
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { PropagateLoader } from "react-spinners";
 
 const Loader = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const handleLocalStorage = () => {
+      const layout = localStorage.getItem("layout");
+
+      dispatch(handleLayout(layout ? layout : "grid"));
+    };
+
+    window && handleLocalStorage();
+  }, []);
+
   return (
     <AnimatePresence>
       <motion.div exit={{ opacity: 0 }}>
