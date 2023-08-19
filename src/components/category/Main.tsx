@@ -11,11 +11,12 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import {
   BsArchive,
   BsChevronLeft,
   BsChevronRight,
+  BsDot,
   BsGridFill,
   BsHeart,
   BsSearch,
@@ -130,6 +131,8 @@ const Tablet = () => {
 };
 
 const Desktop = () => {
+  const [layout] = useState("list");
+
   return (
     <Stack w="100%" spacing={5} pb={36}>
       <HStack
@@ -173,7 +176,12 @@ const Desktop = () => {
           Clear all filter
         </Button>
       </HStack>
-      <Grid templateColumns="repeat(3, 1fr)" gap={5}>
+      <Grid
+        templateColumns={
+          layout === "list" ? "repeat(1, 1fr)" : "repeat(3, 1fr)"
+        }
+        gap={5}
+      >
         {Array.from("123456789").map((item, index) => {
           return <ProductCard key={index} />;
         })}
@@ -218,7 +226,68 @@ const Desktop = () => {
 };
 
 const ProductCard = () => {
-  return (
+  const [layout] = useState("list");
+
+  return layout === "list" ? (
+    <Flex
+      bg="white"
+      p={5}
+      borderWidth={1}
+      borderColor="gray.200"
+      borderRadius={5}
+      gap={5}
+    >
+      <Flex w="10rem" justifyContent="center" alignItems="center">
+        <Image src="/deals-smartwatches.png" />
+      </Flex>
+      <Stack as="span" flex="1" spacing={2}>
+        <HStack w="100%" justifyContent="space-between">
+          <Text>Canon Camera EOS 2000, Black 19x zoom</Text>
+          <Button
+            color="blue.500"
+            variant="outline"
+            borderColor="gray.200"
+            p={0}
+          >
+            <BsHeart />
+          </Button>
+        </HStack>
+        <HStack>
+          <Text fontWeight={600}>$99.50</Text>
+          <Text as="s" color="blackAlpha.600">
+            $1128.00
+          </Text>
+        </HStack>
+        <HStack spacing={3}>
+          <HStack spacing={1}>
+            {Array.from("1234").map((item, index) => (
+              <BsStarFill key={index} color="#ff9017" />
+            ))}
+            <BsStarFill color="#bdc4cd" />
+            <Text ml={2} color="#ff9017">
+              4.2
+            </Text>
+          </HStack>
+          <BsDot color="gray" />
+          <Text color="blackAlpha.500">154 orders</Text>
+          <BsDot color="gray" />
+          <Text color="teal.300">Free shipping</Text>
+        </HStack>
+        <Text w="90%">
+          Lorep ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          elusmod tempor incididunt ut labore et dolore magna aliqua
+        </Text>
+        <Button
+          colorScheme="blue"
+          variant="link"
+          w="fit-content"
+          fontWeight={500}
+        >
+          View details
+        </Button>
+      </Stack>
+    </Flex>
+  ) : (
     <Stack
       bg="white"
       borderColor="gray.200"
