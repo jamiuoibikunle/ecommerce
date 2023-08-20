@@ -130,8 +130,6 @@ const Brands = () => {
   };
 
   const query = useQuery();
-
-  const router = useRouter();
   const pathname = usePathname();
 
   return (
@@ -188,21 +186,24 @@ const Brands = () => {
 };
 
 const Features = () => {
-  const [brands, setBrands] = useState([
-    { title: "Metallic" },
-    { title: "Plastic cover" },
-    { title: "8GB Ram" },
-    { title: "Super power" },
-    { title: "Large memory" },
-    { title: "5G network" },
-    { title: "4000mAh battery" },
-    { title: "Micro sim" },
+  const [features] = useState([
+    "Metallic",
+    "Plastic cover",
+    "8GB Ram",
+    "Super power",
+    "Large memory",
+    "5G network",
+    "4000mAh battery",
+    "Micro sim",
   ]);
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleExpanded = () => {
     setIsExpanded(!isExpanded);
   };
+
+  const query = useQuery();
+  const pathname = usePathname();
 
   return (
     <AccordionItem borderWidth={0} pb={4}>
@@ -221,11 +222,22 @@ const Features = () => {
             maxHeight={isExpanded ? "fit-content" : "10.5rem"}
             overflowY="hidden"
           >
-            {brands.map((item, index) => {
+            {features.map((item, index) => {
               return (
-                <Checkbox key={index} w="100%">
+                <Checkbox
+                  key={index}
+                  w="100%"
+                  isChecked={query["feature"].includes(
+                    item.replaceAll(" ", "%20")
+                  )}
+                  onChange={() => {
+                    const params = handleQuery(query, "feature", item);
+                    const resolvedURL = (pathname as string) + params;
+                    window.location.replace(resolvedURL);
+                  }}
+                >
                   <Text w="100%" textAlign="left" color="blackAlpha.600">
-                    {item.title}
+                    {item}
                   </Text>
                 </Checkbox>
               );

@@ -3,10 +3,19 @@ import { Query } from "@/types";
 export const handleQuery = (query: Query, key: string, item: string) => {
 	switch (key) {
 		case "brand":
+			{
+				// Sort other queries
+				const brand = handleBrand(query, key, item);
+				const others = handleSpread(query, key, brand);
+				return others;
+			}
+
+		case "feature": {
 			// Sort other queries
-			const brand = handleBrand(query, key, item);
-			const others = handleSpread(query, key, brand);
+			const feature = handleFeature(query, key, item);
+			const others = handleSpread(query, key, feature);
 			return others;
+		}
 
 		default:
 			return () => {
@@ -29,6 +38,22 @@ const handleBrand = (query: Query, key: string, item: string) => {
 	const resolved = queryArray.join("+");
 
 	return resolved ? `brand=${resolved}` : "";
+};
+
+const handleFeature = (query: Query, key: string, item: string) => {
+	// Check if item is in key, if there remove. If not, add. Handle the +
+	let queryArray = query[key]?.split("+") || [];
+	console.log(queryArray)
+
+	if (queryArray?.includes(item)) {
+		queryArray = queryArray.filter((e) => e !== item);
+	} else {
+		queryArray.push(item);
+	}
+
+	const resolved = queryArray.join("+");
+
+	return resolved ? `feature=${resolved}` : "";
 };
 
 const handleSpread = (
