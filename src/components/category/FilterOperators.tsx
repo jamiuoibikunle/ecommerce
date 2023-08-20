@@ -156,8 +156,8 @@ const Brands = () => {
                 <Checkbox
                   key={index}
                   w="100%"
+                  isChecked={query["brand"].includes(item.title)}
                   onChange={() => {
-                    console.log(query);
                     const params = handleQuery(query, "brand", item.title);
                     const resolvedURL = (pathname as string) + params;
                     window.location.replace(resolvedURL);
