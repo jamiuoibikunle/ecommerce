@@ -18,6 +18,7 @@ export const handleQuery = (query: Query, key: string, item: string) => {
 const handleBrand = (query: Query, key: string, item: string) => {
 	// Check if item is in key, if there remove. If not, add. Handle the +
 	let queryArray = query[key]?.split("+") || [];
+	console.log(queryArray)
 
 	if (queryArray?.includes(item)) {
 		queryArray = queryArray.filter((e) => e !== item);

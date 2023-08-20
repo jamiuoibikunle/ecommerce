@@ -133,7 +133,6 @@ const Brands = () => {
 
   const router = useRouter();
   const pathname = usePathname();
-  const params = useSearchParams();
 
   return (
     <AccordionItem borderWidth={0} pb={4}>
@@ -157,7 +156,12 @@ const Brands = () => {
                 <Checkbox
                   key={index}
                   w="100%"
-                  onChange={() => handleQuery(query, "brand", item.title)}
+                  onChange={() => {
+                    console.log(query);
+                    const params = handleQuery(query, "brand", item.title);
+                    const resolvedURL = (pathname as string) + params;
+                    window.location.replace(resolvedURL);
+                  }}
                 >
                   <Text w="100%" textAlign="left" color="blackAlpha.600">
                     {item.title}
