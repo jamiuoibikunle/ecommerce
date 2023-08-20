@@ -25,6 +25,8 @@ import {
 } from "@chakra-ui/react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { BsStarFill } from "react-icons/bs";
+import { useQuery } from "@pantha/query";
+import { handleQuery } from "@/utils/handleQuery";
 
 const FilterOpeators = () => {
   return (
@@ -127,6 +129,8 @@ const Brands = () => {
     setIsExpanded(!isExpanded);
   };
 
+  const query = useQuery();
+
   const router = useRouter();
   const pathname = usePathname();
   const params = useSearchParams();
@@ -150,7 +154,11 @@ const Brands = () => {
           >
             {brands.map((item, index) => {
               return (
-                <Checkbox key={index} w="100%">
+                <Checkbox
+                  key={index}
+                  w="100%"
+                  onChange={() => handleQuery(query, "brand", item.title)}
+                >
                   <Text w="100%" textAlign="left" color="blackAlpha.600">
                     {item.title}
                   </Text>

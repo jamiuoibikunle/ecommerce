@@ -22,3 +22,5 @@ interface DealsCountdown {
   minutes: number,
   seconds: number,
 }
+
+type Query = { [key: string]: string }
