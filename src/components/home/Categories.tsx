@@ -9,7 +9,6 @@ import {
   Text,
   useMediaQuery,
 } from "@chakra-ui/react";
-import { useRouter } from "next/navigation";
 import React from "react";
 import { BsPersonFill } from "react-icons/bs";
 
@@ -116,14 +115,13 @@ const Categories = () => {
 
 export const CustomButton = ({ title, link }: any) => {
   const [isDesktop] = useMediaQuery("(min-width: 768px)");
-  const router = useRouter();
 
   return isDesktop ? (
     <Button
       colorScheme={title === "Automobiles" ? "gray" : "none"}
       color="black"
       w={{ base: "fit-content", lg: "15rem" }}
-      onClick={() => router.push(`/category/${link}`)}
+      onClick={() => window.location.replace(`/category/${link}`)}
     >
       <Text w="100%" textAlign="left" fontWeight={500}>
         {title}
@@ -134,7 +132,7 @@ export const CustomButton = ({ title, link }: any) => {
       colorScheme="gray"
       color="blue.500"
       w={{ base: "fit-content", lg: "15rem" }}
-      onClick={() => router.push(`/category/${link}`)}
+      onClick={() => window.location.replace(`/category/${link}`)}
     >
       <Text w="100%" textAlign="left" fontWeight={500}>
         {title}
