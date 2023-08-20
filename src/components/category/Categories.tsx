@@ -17,15 +17,14 @@ const Categories = () => {
         w={{ base: "fit-content", lg: "max-content" }}
         flexDir={{ base: "row", lg: "column" }}
       >
-        <CustomButton link="" title="Automobiles" />
-        <CustomButton link="" title="Clothes and wear" />
-        <CustomButton link="" title="Home interiors" />
-        <CustomButton link="" title="Computer and tech" />
-        <CustomButton link="" title="Tools, equipments" />
-        <CustomButton link="" title="Sports and outdoor" />
-        <CustomButton link="" title="Animal and pets" />
-        <CustomButton link="" title="Machinery tools" />
-        <CustomButton link="" title="More category" />
+        <CustomButton link="automobiles" title="Automobiles" />
+        <CustomButton link="clothes and wear" title="Clothes and wear" />
+        <CustomButton link="home interiors" title="Home interiors" />
+        <CustomButton link="computer and tech" title="Computer and tech" />
+        <CustomButton link="tools and equipment" title="Tools, equipments" />
+        <CustomButton link="sports and outdoor" title="Sports and outdoor" />
+        <CustomButton link="animal and pets" title="Animal and pets" />
+        <CustomButton link="machinery tools" title="Machinery tools" />
       </Stack>
     </Box>
   );
