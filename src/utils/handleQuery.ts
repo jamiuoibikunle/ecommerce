@@ -17,6 +17,13 @@ export const handleQuery = (query: Query, key: string, item: string) => {
 			return others;
 		}
 
+		case "rating": {
+			// Sort other queries
+			const rating = handleRating(query, key, item);
+			const others = handleSpread(query, key, rating);
+			return others;
+		}
+
 		default:
 			return () => {
 				console.log("Yo");
@@ -54,6 +61,22 @@ const handleFeature = (query: Query, key: string, item: string) => {
 	const resolved = queryArray.join("+");
 
 	return resolved ? `feature=${resolved}` : "";
+};
+
+const handleRating = (query: Query, key: string, item: string) => {
+	// Check if item is in key, if there remove. If not, add. Handle the +
+	let queryArray = query[key]?.split("+") || [];
+	console.log(queryArray)
+
+	if (queryArray?.includes(item)) {
+		queryArray = queryArray.filter((e) => e !== item);
+	} else {
+		queryArray.push(item);
+	}
+
+	const resolved = queryArray.join("+");
+
+	return resolved ? `rating=${resolved}` : "";
 };
 
 const handleSpread = (

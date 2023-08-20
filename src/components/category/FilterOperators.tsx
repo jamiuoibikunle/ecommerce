@@ -154,7 +154,7 @@ const Brands = () => {
                 <Checkbox
                   key={index}
                   w="100%"
-                  isChecked={query["brand"].includes(item.title)}
+                  isChecked={query["brand"]?.includes(item.title)}
                   onChange={() => {
                     const params = handleQuery(query, "brand", item.title);
                     const resolvedURL = (pathname as string) + params;
@@ -227,7 +227,7 @@ const Features = () => {
                 <Checkbox
                   key={index}
                   w="100%"
-                  isChecked={query["feature"].includes(
+                  isChecked={query["feature"]?.includes(
                     item.replaceAll(" ", "%20")
                   )}
                   onChange={() => {
@@ -345,6 +345,9 @@ const Condition = () => {
 const Ratings = () => {
   const [ratings] = useState([5, 4, 3, 2]);
 
+  const query = useQuery();
+  const pathname = usePathname();
+
   return (
     <AccordionItem borderWidth={0} pb={4}>
       <AccordionButton px={0}>
@@ -359,7 +362,20 @@ const Ratings = () => {
         <Stack spacing={5}>
           {ratings.map((rating, index) => {
             return (
-              <Checkbox key={index} spacing={3}>
+              <Checkbox
+                key={index}
+                spacing={3}
+                isChecked={query["rating"]?.includes(String(rating) + "-star")}
+                onChange={() => {
+                  const params = handleQuery(
+                    query,
+                    "rating",
+                    String(rating + "-star")
+                  );
+                  const resolvedURL = (pathname as string) + params;
+                  window.location.replace(resolvedURL);
+                }}
+              >
                 <HStack>
                   {[1, 2, 3, 4, 5].map((item, index) => (
                     <BsStarFill
