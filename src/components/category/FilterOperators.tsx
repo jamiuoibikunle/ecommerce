@@ -23,7 +23,7 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { BsStarFill } from "react-icons/bs";
 
 const FilterOpeators = () => {
@@ -45,7 +45,7 @@ const SubCategory = () => {
   const path = usePathname();
   const router = useRouter();
 
-  const [subcategories, setSubcategories] = useState([
+  const [subcategories] = useState([
     { title: "Mobile accessory", link: "mobile%20accessory" },
     { title: "Electronics", link: "electronics" },
     { title: "Smartphones", link: "smartphones" },
@@ -111,7 +111,7 @@ const SubCategory = () => {
 };
 
 const Brands = () => {
-  const [brands, setBrands] = useState([
+  const [brands] = useState([
     { title: "Samsung" },
     { title: "Apple" },
     { title: "Huawei" },
@@ -126,6 +126,10 @@ const Brands = () => {
   const toggleExpanded = () => {
     setIsExpanded(!isExpanded);
   };
+
+  const router = useRouter();
+  const pathname = usePathname();
+  const params = useSearchParams();
 
   return (
     <AccordionItem borderWidth={0} pb={4}>

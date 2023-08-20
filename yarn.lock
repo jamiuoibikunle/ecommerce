@@ -1117,6 +1117,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@pantha/query@^1.0.11":
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/@pantha/query/-/query-1.0.11.tgz#3de5a6065d9cef0cf4b7f541b449124687127307"
+  integrity sha512-ZlZquG5XtBIwNJ3bAkTDv6OV028GaZFSHW2Z71qcsCGj4BMTWe8TwWYEziSPTQfp10T5nJtrKGY6C2mrOo7BlA==
+
 "@pkgr/utils@^2.3.1":
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/@pkgr/utils/-/utils-2.4.2.tgz#9e638bbe9a6a6f165580dc943f138fd3309a2cbc"
