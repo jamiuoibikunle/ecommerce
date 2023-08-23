@@ -79,14 +79,32 @@ const Desktop = () => {
                 w="fit-content"
               >
                 <Text noOfLines={1}>{item}</Text>
-                <Box cursor="pointer">
+                <Box
+                  cursor="pointer"
+                  onClick={() => {
+                    window.location.replace(
+                      window.location.search.replace(
+                        item.replaceAll(" ", "%20"),
+                        ""
+                      )
+                    );
+                  }}
+                >
                   <BsXLg />
                 </Box>
               </HStack>
             );
           })}
           {queries.length === 0 ? null : (
-            <Button variant="link" colorScheme="blue" fontWeight={500} ml={4}>
+            <Button
+              variant="link"
+              colorScheme="blue"
+              fontWeight={500}
+              ml={4}
+              onClick={() => {
+                window.location.replace(window.location.pathname);
+              }}
+            >
               Clear all filter
             </Button>
           )}

@@ -6,6 +6,8 @@ const useFetchFilters = (query: Query) => {
 
 	useEffect(() => {
 		for (const [key, value] of Object.entries(query)) {
+			if (!value) continue;
+
 			const mapped = value.split("+")
 			mapped.map((item) => setQueries(queries => [...queries, item.replaceAll("%20", " ")])
 			)
