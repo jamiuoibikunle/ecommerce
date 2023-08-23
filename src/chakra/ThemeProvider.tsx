@@ -10,6 +10,18 @@ const theme = extendTheme({
       "*": {
         boxSizing: "border-box",
       },
+      body: {
+        "::-webkit-scrollbar": {
+          width: "5px",
+        },
+        "::-webkit-scrollbar-track": {
+          "border-radius": 20,
+        },
+        "::-webkit-scrollbar-thumb": {
+          background: "blue.500",
+          "border-radius": 20,
+        },
+      },
     },
   },
   colors: {
