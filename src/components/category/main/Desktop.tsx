@@ -1,41 +1,38 @@
-import useRender from "@/hooks/useRender";
 import {
   Box,
   Button,
   Flex,
   Grid,
   HStack,
-  Heading,
   Image,
   Spacer,
   Stack,
   Text,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React from "react";
 import {
-  BsArchive,
   BsChevronLeft,
   BsChevronRight,
   BsDot,
   BsGridFill,
   BsHeart,
-  BsSearch,
   BsStarFill,
   BsXLg,
 } from "react-icons/bs";
-import { BiShieldQuarter } from "react-icons/bi";
-import { MdSend } from "react-icons/md";
 import { PiListFill } from "react-icons/pi";
-import FilterOpeators from "@/components/category/FilterOperators";
-import useLayout from "@/hooks/useLayout";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/types";
 import { handleLayout } from "@/features/slices/layoutSlice";
+import { useQuery } from "@pantha/query";
+import useFetchFilters from "@/hooks/useFetchFilters";
 
 const Desktop = () => {
   const dispatch = useDispatch();
 
   const { layout } = useSelector((state: RootState) => state.layout);
+
+  const query = useQuery();
+  const [queries] = useFetchFilters(query);
 
   return (
     <Stack w="100%" spacing={5} pb={36}>
@@ -69,28 +66,30 @@ const Desktop = () => {
         })}
       </HStack>
       <Box w="100%" overflowX="auto" pb={3}>
-        <HStack w="fit-content" overflowX="auto">
-          {["Samsung", "Apple", "Poco", "Metallic", "4 star", "3 star"].map(
-            (item, index) => {
-              return (
-                <Button
-                  key={index}
-                  variant="outline"
-                  colorScheme="blue"
-                  fontWeight={500}
-                  borderColor="blue.500"
-                  bg="white"
-                  color="black"
-                  rightIcon={<BsXLg />}
-                >
-                  {item}
-                </Button>
-              );
-            }
+        <HStack w="fit-content">
+          {queries.map((item, index) => {
+            return (
+              <HStack
+                key={index}
+                borderWidth={1}
+                borderColor="blue.500"
+                borderRadius={5}
+                px={4}
+                py={2}
+                w="fit-content"
+              >
+                <Text noOfLines={1}>{item}</Text>
+                <Box cursor="pointer">
+                  <BsXLg />
+                </Box>
+              </HStack>
+            );
+          })}
+          {queries.length === 0 ? null : (
+            <Button variant="link" colorScheme="blue" fontWeight={500} ml={4}>
+              Clear all filter
+            </Button>
           )}
-          <Button variant="link" colorScheme="blue" fontWeight={500} ml={4}>
-            Clear all filter
-          </Button>
         </HStack>
       </Box>
       <Grid
