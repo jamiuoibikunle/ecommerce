@@ -45,7 +45,7 @@ const Main = () => {
               <FilterOpeators />
             </Box>
           ) : null}
-          <Box as="span" flex="1">
+          <Box as="span" flex="1" maxW="calc(100% - 16rem)">
             <Desktop />
           </Box>
         </Flex>

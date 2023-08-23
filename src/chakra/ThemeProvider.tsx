@@ -9,10 +9,9 @@ const theme = extendTheme({
     global: {
       "*": {
         boxSizing: "border-box",
-      },
-      body: {
         "::-webkit-scrollbar": {
           width: "5px",
+          height: "5px",
         },
         "::-webkit-scrollbar-track": {
           "border-radius": 20,
@@ -22,6 +21,7 @@ const theme = extendTheme({
           "border-radius": 20,
         },
       },
+      body: {},
     },
   },
   colors: {

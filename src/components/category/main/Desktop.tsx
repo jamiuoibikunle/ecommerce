@@ -68,29 +68,31 @@ const Desktop = () => {
           );
         })}
       </HStack>
-      <HStack>
-        {["Samsung", "Apple", "Poco", "Metallic", "4 star", "3 star"].map(
-          (item, index) => {
-            return (
-              <Button
-                key={index}
-                variant="outline"
-                colorScheme="blue"
-                fontWeight={500}
-                borderColor="blue.500"
-                bg="white"
-                color="black"
-                rightIcon={<BsXLg />}
-              >
-                {item}
-              </Button>
-            );
-          }
-        )}
-        <Button variant="link" colorScheme="blue" fontWeight={500} ml={4}>
-          Clear all filter
-        </Button>
-      </HStack>
+      <Box w="100%" overflowX="auto" pb={3}>
+        <HStack w="fit-content" overflowX="auto">
+          {["Samsung", "Apple", "Poco", "Metallic", "4 star", "3 star"].map(
+            (item, index) => {
+              return (
+                <Button
+                  key={index}
+                  variant="outline"
+                  colorScheme="blue"
+                  fontWeight={500}
+                  borderColor="blue.500"
+                  bg="white"
+                  color="black"
+                  rightIcon={<BsXLg />}
+                >
+                  {item}
+                </Button>
+              );
+            }
+          )}
+          <Button variant="link" colorScheme="blue" fontWeight={500} ml={4}>
+            Clear all filter
+          </Button>
+        </HStack>
+      </Box>
       <Grid
         templateColumns={
           layout === "list" ? "repeat(1, 1fr)" : "repeat(3, 1fr)"
